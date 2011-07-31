@@ -10,11 +10,16 @@ Utiliza el dump de monitor ciudadano: ~/data/monitor_ciudadano_dump.sql
 
 ## Instalación
 
+### Para Desarrollo
+
 * git clone git@github.com:etagwerker/ci-web.git
 * cd ci-web
 * cp config/database.yml.sample config/database.yml
+* gem install bundler --no-ri --no-rdoc
+* bundle install
 * rake db:create:all
 * mysql --database=ci_development < data/monitor_ciudadano_dump.sql
+* rake db:migrate
 * rails server
 
 Nota: Vas a tener que revisar config/database.yml para que use tu usr/pwd de MySQL
