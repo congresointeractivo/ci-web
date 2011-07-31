@@ -34,5 +34,9 @@ group :development do
   gem 'ruby-debug19'
   
   # Deploy with Capistrano
-  gem 'capistrano'
+  gem 'capistrano', '2.5.19'
+end
+
+group :production do  
+  gem 'unicorn', '3.2.1'
 end
