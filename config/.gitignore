@@ -1,1 +1,3 @@
 database.yml
+deploy.rb
+unicorn.rb
