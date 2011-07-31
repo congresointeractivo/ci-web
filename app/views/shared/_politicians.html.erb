@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Presencia (%)</th>  
+    <th>Presencias</th>
+    <th>Ausencias</th>        
+    <th></th>
+  </tr>
+
+<% personas.each do |persona| %>
+  <tr>
+    <td><%= "#{persona.lastName}, #{persona.name}" %></td>
+    <td><%= number_to_percentage(persona.countPresentPercentage.to_f * 100, :precision => 2) %></td>        
+    <td><%= persona.countPresent %></td>
+    <td><%= persona.absent %></td>    
+    <td><%= link_to 'Show', persona %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate personas %>
+
+<%= raw page_entries_info personas %>
