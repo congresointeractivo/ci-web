@@ -1,4 +1,8 @@
 CiWeb::Application.routes.draw do
+  resources :senators
+  resources :diputados, :only => [:index, :show]
+  resources :politicians, :only => [:index, :show]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
