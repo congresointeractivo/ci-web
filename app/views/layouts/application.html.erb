@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Congreso Interactivo Web</title>
+  <title>Congreso Interactivo</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-  
-<div class="header">
-  <a href="/senators">Senadores</a>
-  <a href="/diputados">Diputados</a>
+<div class="container">  
+  <div class="header clearfix">
+    <h1 class="site-name">Congreso Interactivo</h1>
+    <nav class="main-menu">
+      <a href="/senators">Senadores</a>
+      <a href="/diputados">Diputados</a>
+    </nav>
+  </div>
+  <div class="main-content">
+    <%= yield %>
+  </div>
 </div>
-
-<%= yield %>
-
 </body>
 </html>

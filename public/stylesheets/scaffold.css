@@ -12,9 +12,9 @@ pre {
   font-size: 11px;
 }
 
-a { color: #000; }
+a { color: #006285; }
 a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
+a:hover { color: #0192B5;}
 
 div.field, div.actions {
   margin-bottom: 10px;
@@ -53,4 +53,91 @@ div.field, div.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+/* Util */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+/* Layout */
+html,body{width:100%;}
+.container{
+  margin: 0 auto 2em;
+  width: 960px;
+}
+
+/* Header */
+.header{margin-top:40px;}
+.site-name{
+  background:url("../images/logo.png") no-repeat top left;
+  float: left;
+  height:56px;
+  margin: 0;
+  text-indent:-9999;
+  width:217px;
+}
+.main-menu{
+  margin-top: 20px;
+}
+.main-menu a{
+  font-size: 18px;
+  text-decoration: none;
+}
+.main-menu a:hover{color:#0192B5;}
+
+/* Tablas de diputados y senadores */
+.lista-funcionarios th{
+  color: #666;
+  font-size: 10px;
+  font-weight: normal;
+  text-align: left;
+  text-transform: uppercase;
+}
+.lista-funcionarios td{
+  border-top:1px solid #DDD;
+  padding:10px;
+}
+.lista-funcionarios .nombre{
+  font-weight:bold;
+}
+.lista-funcionarios .presentismo,
+.lista-funcionarios .presente,
+.lista-funcionarios .ausente{
+  text-align:right;
+}
+/* ---- Pagination ---- */
+.pagination a,
+.pagination span{
+    color:#666666;
+    display:block;
+    float:left;
+    font-size:12px;
+    font-weight:bold;
+    margin:0;
+    padding:3px 8px;
+    text-decoration:none;
+    text-shadow:0 1px 0 #FFFFFF;
+}
+.pagination a:hover {color:#0192B5;}
+.pagination a:visited{color:#999999;}                                    
+.pagination .current{
+    -moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;
+    background-color:#CCCCCC;
+    color:#FFFFFF;
+    cursor:default;
+    display:block;
+    text-shadow:0 1px 0 #888888;
+}
+.pager li .button{
+    float:left;
+    margin-top:2px;
+    opacity:0.5;
+    padding:0 2px;
+}
+.pager li .button:hover{
+    opacity:1;
+}
+.pager .mini-bt img{
+    margin:0 2px;
+    max-height:9px;
 }

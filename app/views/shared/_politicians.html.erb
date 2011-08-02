@@ -1,4 +1,4 @@
-<table>
+<table class="lista-funcionarios">
   <tr>
     <th>Nombre</th>
     <th>Presencia (%)</th>  
@@ -9,10 +9,10 @@
 
 <% personas.each do |persona| %>
   <tr>
-    <td><%= "#{persona.lastName}, #{persona.name}" %></td>
-    <td><%= number_to_percentage(persona.countPresentPercentage.to_f * 100, :precision => 2) %></td>        
-    <td><%= persona.countPresent %></td>
-    <td><%= persona.absent %></td>    
+    <td class="nombre"><%= "#{persona.lastName}, #{persona.name}" %></td>
+    <td class="presentismo"><%= number_to_percentage(persona.countPresentPercentage.to_f * 100, :precision => 2) %></td>        
+    <td class="presente"><%= persona.countPresent %></td>
+    <td class="ausente"><%= persona.absent %></td>    
     <td><%= link_to 'Show', persona %></td>
   </tr>
 <% end %>
