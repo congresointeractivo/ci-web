@@ -1,0 +1,19 @@
+es:
+  views:
+    will_paginate:
+      previous_label: "&#8592; Menos"
+      next_label: "Más &#8594;"
+      page_gap: "&hellip;"
+
+      page_entries_info:
+        single_page:
+          zero:  "No %{plural} found"
+          one:   "Mostrando 1 %{name}"
+          other: "Mostrando todos %{count} %{plural}"
+        single_page_html:
+          zero:  "No se encontraron %{plural}"
+          one:   "Mostrando <b>1</b> %{name}"
+          other: "Mostrando <b>todos los&nbsp;%{count}</b> %{plural}"
+
+        multi_page: "Mostrando %{plural} %{from} - %{to} de %{total} en total"
+        multi_page_html: "Mostrando %{plural} <b class='range'>%{from}&nbsp;-&nbsp;%{to}</b> de <b class='total'>%{total}</b> en total"
