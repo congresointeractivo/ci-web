@@ -4,16 +4,14 @@
     <th>Presencia (%)</th>  
     <th>Presencias</th>
     <th>Ausencias</th>        
-    <th></th>
   </tr>
 
 <% personas.each do |persona| %>
   <tr>
-    <td class="nombre"><%= "#{persona.lastName}, #{persona.name}" %></td>
-    <td class="presentismo"><%= number_to_percentage(persona.countPresentPercentage.to_f * 100, :precision => 2) %></td>        
+    <td class="nombre"><%= link_to "#{persona.lastName}, #{persona.name}", persona %></td>
+    <td class="presentismo"><%= number_to_percentage(persona.countPresentPercentage.to_f * 100.0, :precision => 2, :separator => ',', :strip_insignificant_zeros => true) %></td>        
     <td class="presente"><%= persona.countPresent %></td>
     <td class="ausente"><%= persona.absent %></td>    
-    <td><%= link_to 'Show', persona %></td>
   </tr>
 <% end %>
 </table>
