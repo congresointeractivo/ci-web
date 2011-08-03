@@ -1,0 +1,29 @@
+/* HUMANS BUILT THIS SITE - FEEL FREE TO EDIT YOURS */
+/* http://humanstxt.org */
+
+/* TEAM */
+Team: Taller de Diseño Interactivo
+Site: http://cuadernointeractivo.com.ar
+Twitter: @tallerixd
+Location: Buenos Aires, Argentina.
+Founders: http://www.congresointeractivo.org/proyecto/sobre-nosotros.html
+Contact: contacto@congresointeractivo.org
+
+Main Developer: Ernesto Tagwerker
+Site: http://etagwerker.com
+Twitter: @etagwerker
+Location: Buenos Aires, Argentina.
+
+CSS Monkey: Damian Calderon
+Site: http://demenece.com.ar
+Twitter: @demenece
+Location: Corrientes, Argentina.
+
+/* THANKS */
+Monitor Ciudadano, for their scrapping work: http://monitor-ciudadano.googlecode.com/
+Ernesto Tagwerker, who help us to include Lean Startup methodologies on the project: http://etagwerker.com
+                                           
+/* SITE */
+Last update: 2011/08/03
+Standards: HTML5, CSS3
+Software: Ruby on Rails, MySQL
