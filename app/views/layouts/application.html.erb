@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Congreso Interactivo</title>
+  <link rel="author" href="humans.txt" />
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
@@ -11,8 +12,8 @@
   <div class="header clearfix">
     <h1 class="site-name"></h1>
     <nav class="main-menu">
-      <a href="/senators">Senadores</a>
-      <a href="/diputados">Diputados</a>
+      <a href="/senators" class="<%= request.path == '/senators' ? "active" : "" %>" >Senadores</a>
+      <a href="/diputados" class="<%= request.path == '/diputados' ? "active" : "" %>" >Diputados</a>
     </nav>
   </div>
   <div class="main-content">

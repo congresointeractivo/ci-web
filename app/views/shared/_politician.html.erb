@@ -1,9 +1,11 @@
-<% if politician.photoPath %>
-  <%= image_tag politician.photoPath, :alt => politician.name %>
-<% end %>
+<div class="perfil-legislador">
+    <% if politician.photoPath %>
+      <%= image_tag politician.photoPath, :alt => politician.name, %>
+    <% end %>
 
-<h1><%= "#{politician.lastName}, #{politician.name}" %></h1>
+    <h1><%= "#{politician.lastName}, #{politician.name}" %></h1>
 
-<div class="details">
-  <label>Email: </label><%= politician.mail %>  
+    <div class="details">
+      <label>Email: </label><%= politician.mail %>
+    </div>
 </div>

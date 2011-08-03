@@ -3,7 +3,11 @@
     <th>Nombre</th>
     <th>Presencia (%)</th>  
     <th>Presencias</th>
-    <th>Ausencias</th>        
+    <th>Ausencias</th>
+    <th class="presentismo">Presencia (%)</th>  
+    <th class="presente">Presencias</th>
+    <th class="ausente">Ausencias</th>        
+    <th></th>
   </tr>
 
 <% personas.each do |persona| %>
@@ -19,4 +23,4 @@
 <%= will_paginate personas %>
 
 
-<%= raw page_entries_info personas, :entry_name => 'Legisladores' %>
+<%# raw page_entries_info personas, :entry_name => 'Legisladores' %>
