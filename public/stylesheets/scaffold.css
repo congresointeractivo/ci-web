@@ -60,7 +60,11 @@ div.field, div.actions {
 .clearfix { zoom: 1; }
 
 /* Layout */
-html,body{width:100%;}
+html,body{
+  margin: 0;
+  padding: 0;
+  width:100%;
+}
 .container{
   margin: 0 auto 2em;
   width: 960px;
