@@ -3,6 +3,7 @@ class Vote < ActiveRecord::Base
   
   belongs_to :legislador
   has_and_belongs_to_many :projects, :join_table => "Project_Vote", :foreign_key => 'voters_id'
+  delegate :partido, :to => :legislador
   
   def project
     self.projects.first

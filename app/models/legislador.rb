@@ -13,4 +13,8 @@ class Legislador < Politician
     
     mandato.political_party if mandato
   end
+  
+  def full_name
+    "#{self.lastName}, #{politician.name}"
+  end
 end
