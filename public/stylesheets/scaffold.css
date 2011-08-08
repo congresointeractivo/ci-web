@@ -177,3 +177,21 @@ html,body{
   padding: 3px;
   border: 1px solid #EEE;
 }
+
+/* Votos */
+
+.afirmative {
+  background-color: lightGreen;
+}
+
+.negative {
+  background-color: lightSalmon;
+}
+
+.absent {
+  background-color: lightYellow;
+}
+
+.votes {
+  float: left;
+}
