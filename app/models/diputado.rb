@@ -6,7 +6,7 @@ class Diputado < Politician
   delegate :summarizedCountSignedProjects, :countAbsence, :countAbsencePercentage, 
            :countLicense, :countLicensePercentage, :countOfficialMission, 
            :countOfficialMissionPercentage, :countPresent, :countPresentPercentage, 
-           :absent, :abstention, :afirmative, :negative, :to => :legislador
+           :absent, :abstention, :afirmative, :negative, :votes, :partido, :to => :legislador
   
   set_table_name 'Diputado'
 end
