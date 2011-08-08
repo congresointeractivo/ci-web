@@ -15,3 +15,15 @@
 Archivo: <%= @project.file %> <br/>
 Iniciado: <%= @project.initiated %> <br/>
 Fuente del Proyecto: <%= @project.projectSource %> <br/>
+
+<h4>Votación</h4>
+
+<%if @project.votes.count == 0 %>
+  (Todavía no se votó)
+<% else %>
+  <ul>
+    <% @project.votes.each do |vote| %>
+      <li class="<%= vote.voteType.downcase %>">Legislador: <%= link_to "#{vote.legislador.full_name}", vote.legislador %> (Partido: <%=vote.partido ? vote.partido.name : "?" %>). Voto: <%= display_vote_type(vote.voteType) %></li>
+    <% end %>
+  </ul>
+<% end%>

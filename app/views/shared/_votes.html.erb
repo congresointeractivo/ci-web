@@ -1,0 +1,5 @@
+<ul>
+  <% votes.each do |vote| %>
+    <li class="<%= vote.voteType.downcase %>">Voto: <%= display_vote_type(vote.voteType) %>, Proyecto: <%= display_project_title(vote.project) %> (<%= link_to "Leer más", vote.project %>)</li>
+  <% end %>
+</ul>
