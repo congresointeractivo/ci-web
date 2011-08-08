@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Partido: <%= @political_party.name %></h1>
+
+Tipo: <%= @political_party.type %><br/>
+Proyectos Firmados: <%= @political_party.summarizedCountSignedProjects %> <br/>
+Total de Ausencias: <%= @political_party.countAbsence  %> <br/>
+Porcentaje de Ausentes: <%= @political_party.countAbsencePercentage %> <br/>
+Total de Licencias: <%= @political_party.countLicense %> <br/>
+Porcentaje de Licencias: <%= @political_party.countLicensePercentage %> <br/>
+Total de Misiones Oficiales: <%= @political_party.countOfficialMission %> <br/>
+Porcentaje en Misión Oficial: <%= @political_party.countOfficialMissionPercentage %> <br/>
+Total de Presentes: <%= @political_party.countPresent %> <br/>
+Porcentaje de Presentes: <%= @political_party.countPresentPercentage %> <br/>
+
+<div class="legisladores">
+  <%= render :partial => 'shared/politicians', :locals => {:personas => @miembros }%>
+</div>
+
+<%= link_to 'Back', political_parties_path %>

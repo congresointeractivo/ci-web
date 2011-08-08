@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Título: <%= display_project_title(@project) %></h1>  
+
+<h2>Sumario</h2>
+<div class="summary">
+  <%= display_project_summary(@project) %>
+</div>
+
+<% if @project.documentURL %>
+  Archivo relacionado: <%= @project.documentURL %>
+<% end %>
+
+<h3>Detalles</h3>
+Archivo: <%= @project.file %> <br/>
+Iniciado: <%= @project.initiated %> <br/>
+Fuente del Proyecto: <%= @project.projectSource %> <br/>

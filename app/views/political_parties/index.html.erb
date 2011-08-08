@@ -1,0 +1,16 @@
+<h1>Partidos Políticos</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+  </tr>
+
+<% @political_parties.each do |political_party| %>
+  <tr>
+    <td><%= political_party.name %></td>
+    <td><%= link_to 'Show', political_party %></td>
+  </tr>
+<% end %>
+</table>
+

@@ -6,6 +6,17 @@
     <h1><%= "#{politician.lastName}, #{politician.name}" %></h1>
 
     <div class="details">
-      <label>Email: </label><%= politician.mail %>
+      <label>Email: </label><%= politician.mail %> <br/>
+      <label>Partido: </label><%= politician.partido.name %>      
+    </div>
+    
+    <div class="votes">
+      <h2>Votos</h2>
+      
+      <ul>
+        <% politician.votes.each do |vote| %>
+          <li class="<%= vote.voteType.downcase %>">Voto: <%= display_vote_type(vote.voteType) %>, Proyecto: <%= display_project_title(vote.project) %> (<%= link_to "Leer más", vote.project %>)</li>
+        <% end %>
+      </ul>
     </div>
 </div>

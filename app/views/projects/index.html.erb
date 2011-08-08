@@ -1,0 +1,15 @@
+<h1>Proyectos</h1>
+
+<table>
+  <tr>
+    <th>Título</th>
+    <th></th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= project.title %></td>
+    <td><%= link_to 'Show', project %></td>
+  </tr>
+<% end %>
+</table>
