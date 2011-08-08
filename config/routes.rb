@@ -1,6 +1,7 @@
 CiWeb::Application.routes.draw do
   resources :political_parties, :only => [:index, :show]
   resources :projects, :only => [:index, :show]
+  resources :legisladors, :only => [:show]
 
   root :to => "senators#index"
   resources :senators, :only => [:index, :show]
