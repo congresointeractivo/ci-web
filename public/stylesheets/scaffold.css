@@ -65,13 +65,16 @@ html,body{
   padding: 0;
   width:100%;
 }
-.container{
-  margin: 0 auto 2em;
+#container{
+  margin:0 auto;
   width: 960px;
 }
 
 /* Header */
-.header{margin-top:40px;}
+#header{
+    margin-bottom:100px;
+    margin:40px 0;
+}
 .site-name{
   background:url("../images/logo.png") no-repeat top left;
   float: left;
@@ -80,13 +83,13 @@ html,body{
   text-indent:-9999;
   width:217px;
 }
-.main-menu{
+#nav{
   float: left;
-  margin-left: 40px;
   width: 690px;
-  margin-top: 14px;
+  margin-top:1px;
+
 }
-.main-menu a{
+#nav a{
   font-size: 12px;
   text-decoration: none;
   padding: 6px 14px;
@@ -100,24 +103,37 @@ html,body{
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-.main-menu a:hover{color:#0192B5;background-color:#E8EFF5;}
-.main-menu a.active{
+#nav a:hover{color:#0192B5;background-color:#E8EFF5;}
+#nav a.active{
   color: white;
   background-color: #719EC3;
   text-shadow: 0 -1px 0 #4D85B4;
 }
+#nav li{
+	float:left;
+	width:100px;
+	display:inline;
+	list-style:none;
+	padding:0;
+	margin:0;
+	
+}
+#nav li.partidos-politicos{width:140px;}
+
 
 /* Tablas de diputados y senadores */
-.main-content h1{
+#main-content{
+    
+}
+#main-content h1{
   font-size: 21px;
   font-weight: normal;
-  margin-top: 40px;
 }
-.lista-funcionarios{
+table{
   width: 100%;
   border-collapse: collapse;
 }
-.lista-funcionarios th{
+th, dt{
   color: #666;
   font-size: 11px;
   font-weight: normal;
@@ -125,10 +141,10 @@ html,body{
   text-align: left;
   text-transform: uppercase;
 }
-.lista-funcionarios tr:nth-child(odd) td{
+tr:nth-child(odd) td{
   background-color:#F3F3F3;
 }
-.lista-funcionarios td{
+td{
   border-top:1px solid #DDD;
   padding:10px;
 }
@@ -140,6 +156,8 @@ html,body{
 .lista-funcionarios .ausente{
   text-align:right;
 }
+
+
 /*-- Tablas: Paginacion */
 .pagination{margin:20px 0;}
 .pagination a,
@@ -171,27 +189,57 @@ html,body{
 }
 
 /* Perfil del legislador */
-.perfil-legislador img{
+#perfil-legislador dt {
+    padding:0;
+}
+#perfil-legislador dd {
+    margin-bottom:10px;
+    
+    }
+
+#perfil-legislador img{
   float: left;
   margin: 0 15px 15px 0;
   padding: 3px;
   border: 1px solid #EEE;
+  max-width:120px;
 }
+
+#perfil-legislador h1{
+    margin:2px  0 0;
+    
+}
+
 
 /* Votos */
+#votos {
+    width:90%;
+    
+}
+#votos tr.positivo:hover td {
+  background-color: #e5fcdb;
+}
+/*
+#votos tr.positivo a{color:#456f33;}
+#votos tr.negativo a{color:#542228;}
+#votos tr.ausente a{color:#7e7335;}
+*/
+#votos tr.positivo:hover a,#votos tr.negativo:hover a,#votos tr.ausente:hover a{text-decoration:none;}
 
-.afirmative {
-  background-color: lightGreen;
+#votos tr.negativo:hover td {
+  background-color: #fcdbdf;
 }
 
-.negative {
-  background-color: lightSalmon;
+#votos tr.ausente:hover td {
+  background-color: #fcf7db;
 }
 
-.absent {
-  background-color: lightYellow;
+#votos th.como-voto{
+    width:75px;
+    text-align:center;
+    
 }
 
-.votes {
-  float: left;
-}
+#votos td.como-voto{
+    text-align:center;
+    }
