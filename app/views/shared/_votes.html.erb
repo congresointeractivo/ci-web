@@ -1,5 +1,14 @@
-<ul>
+<table>
+    <thead>
+        <tr>
+            <th class="proyecto">Proyecto</th>
+            <th class="como-voto">Cómo votó</th>
+        </tr>
+    </thead>    
   <% votes.each do |vote| %>
-    <li class="<%= vote.voteType.downcase %>">Voto: <%= display_vote_type(vote.voteType) %>, Proyecto: <%= display_project_title(vote.project) %> (<%= link_to "Leer más", vote.project %>)</li>
+    <tr class="<%= display_vote_type(vote.voteType).downcase %>" >
+        <td><%= link_to display_project_title(vote.project), vote.project %></td>
+        <td class="como-voto"><%= display_vote_type(vote.voteType) %></td>
+    </tr>
   <% end %>
-</ul>
+</table>
