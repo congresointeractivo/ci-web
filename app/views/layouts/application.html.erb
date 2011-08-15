@@ -8,16 +8,18 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<div class="container">  
-  <div class="header clearfix">
+<div id="container">  
+  <div id="header" class="clearfix">
     <h1 class="site-name"></h1>
-    <nav class="main-menu">
-      <a href="/political_parties" class="<%= request.path == '/political_parties' ? "active" : "" %>" >Partidos Políticos</a>
-      <a href="/senators" class="<%= request.path == '/senators' ? "active" : "" %>" >Senadores</a>
-      <a href="/diputados" class="<%= request.path == '/diputados' ? "active" : "" %>" >Diputados</a>
-    </nav>
+    <div id="nav">
+        <ul class="clearfix">
+            <li class="partidos-politicos"><a href="/political_parties" class="<%= request.path == '/political_parties' ? "active" : "" %>" >Partidos Políticos</a></li>
+            <li class="senadores"><a href="/senators" class="<%= request.path == '/senators' ? "active" : "" %>" >Senadores</a></li>
+            <li class="diputados"><a href="/diputados" class="<%= request.path == '/diputados' ? "active" : "" %>" >Diputados</a></li>
+        </ul>
+    </div>
   </div>
-  <div class="main-content">
+  <div id="main-content">
     <%= yield %>
   </div>
 </div>
