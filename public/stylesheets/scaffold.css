@@ -75,13 +75,16 @@ html,body{
     margin-bottom:100px;
     margin:40px 0;
 }
-.site-name{
+.logo{
   background:url("../images/logo.png") no-repeat top left;
   float: left;
   height:56px;
   margin: 0;
-  text-indent:-9999;
+  text-indent:-9999px;
   width:217px;
+  
+  
+  
 }
 #nav{
   float: left;
@@ -137,10 +140,14 @@ th, dt{
   color: #666;
   font-size: 11px;
   font-weight: normal;
-  padding: 5px 10px;
   text-align: left;
   text-transform: uppercase;
 }
+th{
+    padding: 5px 10px;
+    
+}
+
 tr:nth-child(odd) td{
   background-color:#F3F3F3;
 }
@@ -189,10 +196,7 @@ td{
 }
 
 /* Perfil del legislador */
-#perfil-legislador dt {
-    padding:0;
-}
-#perfil-legislador dd {
+dd {
     margin-bottom:10px;
     
     }
@@ -212,10 +216,6 @@ td{
 
 
 /* Votos */
-#votos {
-    width:90%;
-    
-}
 #votos tr.positivo:hover td {
   background-color: #e5fcdb;
 }
@@ -243,3 +243,9 @@ td{
 #votos td.como-voto{
     text-align:center;
     }
+/*partidos politicos*/
+
+#detalle-presentismo dd{
+    font-size:170%;
+    
+}
