@@ -8,6 +8,8 @@ CiWeb::Application.routes.draw do
   resources :diputados, :only => [:index, :show]
   resources :politicians, :only => [:index, :show]
 
+  match 'bloques' => 'political_parties#index'
+  match 'senadores' => 'senators#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
