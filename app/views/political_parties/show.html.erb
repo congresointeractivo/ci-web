@@ -1,17 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Partido: <%= @political_party.name %></h1>
+<h1><%= @political_party.name %></h1>
 
-Tipo: <%= @political_party.type %><br/>
-Proyectos Firmados: <%= @political_party.summarizedCountSignedProjects %> <br/>
-Total de Ausencias: <%= @political_party.countAbsence  %> <br/>
-Porcentaje de Ausentes: <%= @political_party.countAbsencePercentage %> <br/>
-Total de Licencias: <%= @political_party.countLicense %> <br/>
-Porcentaje de Licencias: <%= @political_party.countLicensePercentage %> <br/>
-Total de Misiones Oficiales: <%= @political_party.countOfficialMission %> <br/>
-Porcentaje en Misión Oficial: <%= @political_party.countOfficialMissionPercentage %> <br/>
-Total de Presentes: <%= @political_party.countPresent %> <br/>
-Porcentaje de Presentes: <%= @political_party.countPresentPercentage %> <br/>
+<dl id="detalle-presentismo">
+    <dt>Tipo:</dt>
+    <dd><%= @political_party.type %></dd>
+    <dt>Proyectos Firmados:</dt>
+    <dd><%= @political_party.summarizedCountSignedProjects %></dd>
+    <dt>Total de Ausencias:</dt>
+    <dd><%= @political_party.countAbsence  %></dd>
+    <dt>Porcentaje de Ausentes:</dt>
+    <dd> <%= number_to_percentage(@political_party.countAbsencePercentage * 100.0, :precision => 0, :separator => ',') %> </dd>
+    <dt>Total de Licencias:</dt>
+    <dd><%= @political_party.countLicense %></dd>
+    <dt>Porcentaje de Licencias:</dt>
+    <dd><%= number_to_percentage(@political_party.countLicensePercentage * 100.0, :precision => 0, :separator => ',') %></dd>
+    <dt>Total de Misiones Oficiales</dt>
+    <dd><%= @political_party.countOfficialMission %> </dd>
+    <dt>Porcentaje en Misión Oficial:</dt>
+    <dd><%= number_to_percentage(@political_party.countOfficialMissionPercentage * 100.0, :precision => 0, :separator => ',') %></dd>
+    <dt>Total de Presentes:</dt>
+    <dd><%= @political_party.countPresent %></dd>
+    <dt>Porcentaje de Presentes: </dt>
+    <dd><%= number_to_percentage(@political_party.countPresentPercentage * 100.0, :precision => 0, :separator => ',') %> </dd>
+</dl>
 
 <div class="legisladores">
   <%= render :partial => 'shared/politicians', :locals => {:personas => @miembros }%>

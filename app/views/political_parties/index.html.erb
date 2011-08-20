@@ -3,13 +3,11 @@
 <table>
   <tr>
     <th>Nombre</th>
-    <th></th>
   </tr>
 
 <% @political_parties.each do |political_party| %>
   <tr>
-    <td><%= political_party.name %></td>
-    <td><%= link_to 'Show', political_party %></td>
+    <td><%= link_to political_party.name, political_party %></td>
   </tr>
 <% end %>
 </table>
