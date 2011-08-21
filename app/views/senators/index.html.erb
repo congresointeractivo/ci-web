@@ -1,3 +1,5 @@
 <h1>Senadores</h1>
 
+<%= render :partial => 'shared/bloques_filter', :locals => { :bloques => @bloques } %>
+
 <%= render :partial => 'shared/politicians', :locals => {:personas => @senators}%>

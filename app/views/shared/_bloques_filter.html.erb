@@ -1,0 +1,10 @@
+<form action="<%= filter_action_path %>" method="get" accept-charset="utf-8">
+  <select class='text bloques-chosen-select' name='bloques' multiple="true" data-placeholder='Filtrar por Bloque'>
+  <% bloques.each do |bloque| %>
+    <option <%= "selected" if defined?(@filter) && @filter[:bloques] && @filter[:bloques].include?(bloque.to_s) %>>
+      <%= bloque %>
+    </option>
+  <% end %>
+  </select>  
+  <input type="submit" value="Filtrar">
+</form>
