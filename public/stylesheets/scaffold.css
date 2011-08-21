@@ -249,3 +249,9 @@ dd {
     font-size:170%;
     
 }
+
+/* Bloques Filter */
+
+.bloques-chosen-select {
+  width:500px;
+}
