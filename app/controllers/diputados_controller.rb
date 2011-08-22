@@ -42,4 +42,10 @@ class DiputadosController < ApplicationController
 
     render :action => 'index'
   end
+  
+  protected
+  
+  def load_political_parties
+    PoliticalParty.where(:type => "DIPUTADOS").all
+  end
 end

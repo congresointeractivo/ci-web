@@ -43,4 +43,10 @@ class SenatorsController < ApplicationController
     end
   end
   
+  protected
+  
+  def load_political_parties
+    PoliticalParty.where(:type => "SENADORES").all
+  end
+  
 end

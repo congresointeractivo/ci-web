@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def setup_filters
     @filter = {}
     @filter[:bloques] = params[:bloques]    
-    @bloques = PoliticalParty.where(:type => params[:controller].upcase).all
+    @bloques = load_political_parties
   end
   
   # sorts and paginates by default the legislators
