@@ -5,6 +5,26 @@
   <link rel="author" href="humans.txt" />
   <%= stylesheet_link_tag :all %>  
   <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "application.js", "chosen.jquery.min.js" %>
+  <script type="text/javascript" language="javascript" src="/javascripts/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+		$(document).ready(function(){
+			$('#tabla-funcionarios').dataTable({
+			  "aaSorting": [[1,'asc']],
+			  "sPaginationType": "full_numbers",
+      	"oLanguage": {
+      		"sLengthMenu": "Mostrar _MENU_ legisladores",
+      		"sSearch": "Filtrar:",
+      		"sInfo": "Mostrando _START_ al _END_ de _TOTAL_ legisladores",
+      		"oPaginate": {
+            "sFirst": "Primera",
+            "sPrevious": "&#8592; Anterior",
+            "sNext": "Siguiente &#8594;",
+            "sLast": "&Uacute;ltima",
+          }
+      	}
+      });
+		});
+	</script>
   <%= csrf_meta_tag %>
 </head>
 <body>
