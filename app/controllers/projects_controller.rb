@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.xml
   def index
-    @projects = Project.all
+    @projects = Project.all.paginate :page => params[:page], :per_page => PER_PAGE  
 
     respond_to do |format|
       format.html # index.html.erb
