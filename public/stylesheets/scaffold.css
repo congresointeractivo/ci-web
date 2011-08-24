@@ -166,6 +166,7 @@ td{
 
 
 /*-- Tablas: Paginacion */
+/* OVERRIDING
 .pagination{margin:20px 0;}
 .pagination a,
 .pagination span,
@@ -194,6 +195,50 @@ td{
     display:block;
     text-shadow:0 1px 0 #888888;
 }
+*/
+.dataTables_paginate{
+  float: left;
+  margin: 20px 0;
+}
+.paginate_button,
+.paginate_active,
+.paginate_button_disabled{
+  color: #666666;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  padding: 3px 8px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #FFFFFF;
+}
+.paginate_button_disabled{
+  color: #CCC;
+}
+.paginate_active{
+  -moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;
+  background-color:#CCCCCC;
+  color:#FFFFFF;
+  cursor:default;
+  display:block;
+  text-shadow:0 1px 0 #888888;
+}
+.dataTables_info{
+  float: right;
+  margin: 20px 0;
+  padding: 3px 0;
+}
+.dataTables_length{
+  float: left;
+  width: 40%;
+}
+.dataTables_filter{
+  float: right;
+  text-align: right;
+  width: 50%;
+}
 
 /* Perfil del legislador */
 dd {
@@ -216,6 +261,10 @@ dd {
 
 
 /* Votos */
+#votos{
+    width:70%;
+    float:left;
+}
 #votos tr.positivo:hover td {
   background-color: #e5fcdb;
 }
@@ -243,6 +292,12 @@ dd {
 #votos td.como-voto{
     text-align:center;
     }
+
+/*twitter legislador*/
+#twitter-legislador{
+    width:25%;
+    float:right;
+}
 /*partidos politicos*/
 
 #detalle-presentismo dd{
