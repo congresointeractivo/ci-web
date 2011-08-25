@@ -10,20 +10,24 @@
 		$(document).ready(function(){
 			$('#tabla-funcionarios').dataTable({
 			  "aaSorting": [[1,'asc']],
+			  "iDisplayLength": 50,
+			  "aLengthMenu": [[50, 100, -1], [50, 100, "All"]],
 			  "sPaginationType": "full_numbers",
-      	"oLanguage": {
-      		"sLengthMenu": "Mostrar _MENU_ legisladores",
-      		"sSearch": "Filtrar:",
-      		"sInfo": "Mostrando _START_ al _END_ de _TOTAL_ legisladores",
-      		"oPaginate": {
-            "sFirst": "Primera",
-            "sPrevious": "&#8592; Anterior",
-            "sNext": "Siguiente &#8594;",
-            "sLast": "&Uacute;ltima",
-          }
-      	}
+      	      "oLanguage": {
+      		      "sLengthMenu": "Mostrar _MENU_ legisladores",
+      		      "sSearch": "Filtrar:",
+      		      "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ legisladores",
+      		      "oPaginate": {
+                      "sFirst": "",
+                      "sPrevious": "&#8592; Anterior",
+                      "sNext": "Siguiente &#8594;",
+                      "sLast": "",
+                  }
+              }
+          });
+          //necesario para que el clear el float
+          $('#tabla-funcionarios_wrapper').addClass('clearfix');
       });
-		});
 	</script>
 
   <%= csrf_meta_tag %>
