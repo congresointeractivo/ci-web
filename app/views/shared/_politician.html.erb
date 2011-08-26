@@ -14,8 +14,10 @@
             </dl>
         </div>
 </div>    
-<div id="votos">
-    <h2>Votos</h2>
-    <%= render :partial => 'shared/votes', :locals => {:votes => politician.votes}%>
+<div class="clearfix">
+    <div id="votos">
+        <h2>Votos</h2>
+        <%= render :partial => 'shared/votes', :locals => {:votes => politician.votes}%>
+    </div>
+    <%= render :partial => 'shared/twitter'%>
 </div>
-<%= render :partial => 'shared/twitter'%>
