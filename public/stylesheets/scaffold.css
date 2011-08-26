@@ -251,6 +251,18 @@ td{
   width: 50%;
 }
 
+.legisladores .dataTables_filter{
+  text-align: left;
+  float:none;
+  width:98%;
+  padding:10px;
+  background-color:lightgrey;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  margin-bottom:25px;
+}
+
+
 /* Perfil del legislador */
 dd {
     margin-bottom:10px;
@@ -344,4 +356,19 @@ dd {
 
 .bloques-chosen-select {
   width:500px;
+}
+
+/* Footer */
+
+#footer {
+  margin-top:20px;
+  border-top:1px solid lightgrey;
+}
+
+#footer li {
+    font-size:90%;
+    list-style:none;
+    display:inline;
+    margin-right:12px;
+    line-height:4;
 }

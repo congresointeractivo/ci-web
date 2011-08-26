@@ -7,27 +7,30 @@
   <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "application.js", "chosen.jquery.min.js", 'css3-mediaqueries.js' %>
   <script type="text/javascript" language="javascript" src="/javascripts/jquery.dataTables.min.js"></script>
   <script type="text/javascript" charset="utf-8">
-		$(document).ready(function(){
-			$('#tabla-funcionarios').dataTable({
-			  "aaSorting": [[1,'asc']],
-			  "iDisplayLength": 50,
-			  "aLengthMenu": [[50, 100, -1], [50, 100, "All"]],
-			  "sPaginationType": "full_numbers",
-      	      "oLanguage": {
-      		      "sLengthMenu": "Mostrar _MENU_ legisladores",
-      		      "sSearch": "Filtrar:",
-      		      "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ legisladores",
-      		      "oPaginate": {
-                      "sFirst": "",
-                      "sPrevious": "&#8592; Anterior",
-                      "sNext": "Siguiente &#8594;",
-                      "sLast": "",
-                  }
-              }
-          });
-          //necesario para que el clear el float
-          $('#tabla-funcionarios_wrapper').addClass('clearfix');
-      });
+	$(document).ready(function(){
+		$('.legisladores #tabla-funcionarios').dataTable({
+		  "aaSorting": [[1,'asc']],
+		  "bPaginate":false,
+		  "bFilter":true,
+		  //"iDisplayLength": 50,
+		  //"aLengthMenu": [[50, 100, -1], [50, 100, "All"]],
+		  //"sPaginationType": "full_numbers",
+	      "oLanguage": {
+		      "sLengthMenu": "Mostrar _MENU_ legisladores",
+		      "sSearch": "Filtrar:",
+		      "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ legisladores",
+		     "oPaginate": {
+                "sFirst": "",
+                "sPrevious": "&#8592; Anterior",
+                "sNext": "Siguiente &#8594;",
+                "sLast": "",
+            }
+        }
+    });
+
+    //necesario para que el clear el float
+    $('#tabla-funcionarios_wrapper').addClass('clearfix');
+    });
 	</script>
 
   <%= csrf_meta_tag %>
@@ -47,6 +50,14 @@
   <div id="main-content">
     <%= yield %>
   </div>
+<div id="footer" >
+    <ul class="clearfix">
+        <li><a href="#">Quienes somos</a></li>
+        <li><a href="#">Datos públicos</a></li>
+        <li><a href="#">Creative Commons</a></li>
+        <li><a href="#">Git-Hub</a></li>
+        
+    </ul>
 </div>
 </body>
 </html>
