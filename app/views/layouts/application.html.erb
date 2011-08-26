@@ -8,6 +8,25 @@
   <script type="text/javascript" language="javascript" src="/javascripts/jquery.dataTables.min.js"></script>
   <script type="text/javascript" charset="utf-8">
 	$(document).ready(function(){
+		$('.legisladores-por-bloque #tabla-funcionarios').dataTable({
+		  "aaSorting": [[1,'asc']],
+		  "bPaginate":false,
+		  "bFilter":true,
+		  //"iDisplayLength": 50,
+		  //"aLengthMenu": [[50, 100, -1], [50, 100, "All"]],
+		  //"sPaginationType": "full_numbers",
+	      "oLanguage": {
+		      "sLengthMenu": "Mostrar _MENU_ legisladores",
+		      "sSearch": "Filtrar:",
+		      "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ legisladores",
+		     "oPaginate": {
+                "sFirst": "",
+                "sPrevious": "&#8592; Anterior",
+                "sNext": "Siguiente &#8594;",
+                "sLast": "",
+            }
+        }
+    });
 		$('.legisladores #tabla-funcionarios').dataTable({
 		  "aaSorting": [[1,'asc']],
 		  "bPaginate":false,
@@ -27,7 +46,6 @@
             }
         }
     });
-
     //necesario para que el clear el float
     $('#tabla-funcionarios_wrapper').addClass('clearfix');
     });

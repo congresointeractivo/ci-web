@@ -93,6 +93,7 @@ html,body{
   margin: 0;
   text-indent:-9999px;
   width:217px;
+  margin-right:20px;
   
   
   
@@ -100,7 +101,7 @@ html,body{
 #nav{
   float: left;
   width: 690px;
-  margin-top:1px;
+  margin-top:15px;
 
 }
 #nav a{
@@ -251,7 +252,7 @@ td{
   width: 50%;
 }
 
-.legisladores .dataTables_filter{
+.legisladores-por-bloque .dataTables_filter{
   text-align: left;
   float:none;
   width:98%;
