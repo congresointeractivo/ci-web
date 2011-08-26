@@ -86,7 +86,7 @@ html,body{
     margin-bottom:100px;
     margin:40px 0;
 }
-.logo{
+.logo span{
   background:url("../images/logo.png") no-repeat top left;
   float: left;
   height:56px;
