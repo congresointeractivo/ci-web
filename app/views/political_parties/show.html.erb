@@ -2,28 +2,25 @@
 
 <h1><%= @political_party.name %></h1>
 
-<dl id="detalle-presentismo">
-    <dt>Tipo:</dt>
-    <dd><%= @political_party.type %></dd>
-    <dt>Proyectos Firmados:</dt>
-    <dd><%= @political_party.summarizedCountSignedProjects %></dd>
-    <dt>Total de Ausencias:</dt>
-    <dd><%= @political_party.countAbsence  %></dd>
-    <dt>Porcentaje de Ausentes:</dt>
-    <dd> <%= number_to_percentage(@political_party.countAbsencePercentage * 100.0, :precision => 0, :separator => ',') %> </dd>
-    <dt>Total de Licencias:</dt>
-    <dd><%= @political_party.countLicense %></dd>
-    <dt>Porcentaje de Licencias:</dt>
-    <dd><%= number_to_percentage(@political_party.countLicensePercentage * 100.0, :precision => 0, :separator => ',') %></dd>
-    <dt>Total de Misiones Oficiales</dt>
-    <dd><%= @political_party.countOfficialMission %> </dd>
-    <dt>Porcentaje en Misión Oficial:</dt>
-    <dd><%= number_to_percentage(@political_party.countOfficialMissionPercentage * 100.0, :precision => 0, :separator => ',') %></dd>
-    <dt>Total de Presentes:</dt>
-    <dd><%= @political_party.countPresent %></dd>
-    <dt>Porcentaje de Presentes: </dt>
-    <dd><%= number_to_percentage(@political_party.countPresentPercentage * 100.0, :precision => 0, :separator => ',') %> </dd>
-</dl>
+<h3><%= @political_party.type %></h3>
+<ul id="detalle-presentismo" class="clearfix">
+    <li><%= @political_party.summarizedCountSignedProjects %>
+    <span class="tipo-de-dato">Proyectos Firmados</span></li>
+    
+    <li><%= number_to_percentage(@political_party.countPresentPercentage * 100.0, :precision => 0, :separator => ',') %>
+    <span class="tipo-de-dato">Presentes (<%= @political_party.countPresent %>)</span></li>
+    
+    <li> <%= number_to_percentage(@political_party.countAbsencePercentage * 100.0, :precision => 0, :separator => ',') %>
+    <span class="tipo-de-dato">Ausencias (<%= @political_party.countAbsence  %>)</span></li>
+    
+    <li><%= number_to_percentage(@political_party.countLicensePercentage * 100.0, :precision => 0, :separator => ',') %>
+    <span class="tipo-de-dato">Licencias (<%= @political_party.countLicense %>)</span></li>
+    
+    
+    <li class="ultimo"><%= number_to_percentage(@political_party.countOfficialMissionPercentage * 100.0, :precision => 0, :separator => ',') %>
+    <span class="tipo-de-dato">Misiones Oficiales (<%= @political_party.countOfficialMission %>)</span></li>
+
+</ul>
 
 <div class="legisladores">
   <%= render :partial => 'shared/politicians', :locals => {:personas => @miembros }%>

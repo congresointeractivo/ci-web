@@ -54,10 +54,21 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+h3{
+    font-weight:bold;
+    font-size:85%;
+    line-height:20px;
+    margin:20px 0 0 0;
+    
+}
+
 /* Util */
 .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
+
+
 
 /* Layout */
 html,body{
@@ -136,7 +147,7 @@ table{
   width: 100%;
   border-collapse: collapse;
 }
-th, dt{
+th, .tipo-de-dato{
   color: #666;
   font-size: 11px;
   font-weight: normal;
@@ -300,10 +311,34 @@ dd {
 }
 /*partidos politicos*/
 
-#detalle-presentismo dd{
-    font-size:170%;
+#detalle-presentismo {
+    border-top:1px dotted lightgrey;
+    margin-bottom:40px;
+    
     
 }
+
+#detalle-presentismo li {
+    font-size:300%;
+    display:inline;
+    float:left;
+    width:160px;
+    border-right:1px dotted lightgrey;
+    padding:20px 15px 0 15px;
+    
+}
+
+#detalle-presentismo .tipo-de-dato{
+    display:block;
+    line-height:3;
+}
+
+
+#detalle-presentismo .ultimo{
+    border-right:none;
+    
+}
+
 
 /* Bloques Filter */
 
