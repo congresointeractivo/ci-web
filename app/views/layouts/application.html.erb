@@ -46,17 +46,21 @@
             }
         }
     });
-    //necesario para que el clear el float
+    //necesario para que el corte el float
     $('#tabla-funcionarios_wrapper').addClass('clearfix');
     });
 	</script>
 
   <%= csrf_meta_tag %>
 </head>
-<body>
+<body id="<%= request.path == '/' ? 'home' : '' %>" >
 <div id="container">  
   <div id="header" class="clearfix">
-    <div class="logo"><a href="/"><span>Congreso Interactivo</span></a></div>
+      <% if request.path == '/' %>
+      <h1 class="logo"><a href="/"><span>Congreso Interactivo</span></a></h1>
+      <% else %>
+      <div class="logo"><a href="/"><span>Congreso Interactivo</span></a></div>
+    <% end %>
     <div id="nav">
         <ul class="clearfix">
             <li class="bloques"><a href="/bloques" class="<%= request.path == '/bloques' ? "active" : "" %>" >Bloques</a></li>

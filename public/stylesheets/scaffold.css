@@ -146,11 +146,20 @@ html,body{
   line-height:1.2;
   margin-bottom:20px;
 }
+
+
 h2{
   font-size: 150%;
   font-weight: bold;
   line-height:1.2;
   margin-top:20px;
+}
+
+#home h2{
+  font-size: 180%;
+  font-weight: normal;
+  line-height:1.2;
+  margin-bottom:20px;
 }
 
 
