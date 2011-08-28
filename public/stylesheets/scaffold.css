@@ -345,12 +345,8 @@ dd {
     }
 
 /*twitter legislador*/
-#twitter-legislador{
+#twitter-legislador, #form-twitter-legislador{
     margin-top:70px;
-}
-#form-twitter-legislador{
-    width:25%;
-    float:right;
 }
 /*partidos politicos*/
 

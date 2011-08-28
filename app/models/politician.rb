@@ -18,5 +18,8 @@ class Politician < ActiveRecord::Base
   
   def full_name
     "#{self.lastName}, #{politician.name}"
+  end
+  def twitter_user
+    "#{politician.twitterUserName}"
   end  
 end
