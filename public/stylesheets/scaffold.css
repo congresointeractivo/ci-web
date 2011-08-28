@@ -76,10 +76,17 @@ html,body{
   padding: 0;
   width:100%;
 }
+.container {
+padding-left: 20px;
+padding-right: 20px;
+}
+
+/*
 #container{
   margin:0 auto;
   width: 960px;
 }
+*/
 
 /* Header */
 #header{
@@ -307,7 +314,6 @@ dd {
 
 /* Votos */
 #votos{
-    width:70%;
     float:left;
 }
 #votos tr.positivo:hover td {
@@ -340,8 +346,7 @@ dd {
 
 /*twitter legislador*/
 #twitter-legislador{
-    width:25%;
-    float:right;
+    margin-top:70px;
 }
 #form-twitter-legislador{
     width:25%;
