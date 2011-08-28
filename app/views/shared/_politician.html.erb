@@ -1,5 +1,5 @@
-<div id="perfil-legislador">
-    <div id="informacion-personal" class="clearfix">
+<div id="perfil-legislador" class="twelvecol">
+    <div id="informacion-personal">
         <% if politician.photoPath %>
             <%= image_tag politician.photoPath, :alt => politician.name, %>
             <% end %>
@@ -15,7 +15,7 @@
         </div>
 </div>    
 <div class="clearfix">
-    <div id="votos">
+    <div id="votos" class="ninecol">
         <h2>Votos</h2>
         <%= render :partial => 'shared/votes', :locals => {:votes => politician.votes}%>
     </div>

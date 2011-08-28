@@ -54,33 +54,38 @@
   <%= csrf_meta_tag %>
 </head>
 <body id="<%= request.path == '/' ? 'home' : '' %>" >
-<div id="container">  
-  <div id="header" class="clearfix">
-      <% if request.path == '/' %>
-      <h1 class="logo"><a href="/"><span>Congreso Interactivo</span></a></h1>
-      <% else %>
-      <div class="logo"><a href="/"><span>Congreso Interactivo</span></a></div>
-    <% end %>
-    <div id="nav">
-        <ul class="clearfix">
-            <li class="bloques"><a href="/bloques" class="<%= request.path == '/bloques' ? "active" : "" %>" >Bloques</a></li>
-            <li class="senadores"><a href="/senadores" class="<%= params[:controller] == 'senators' ? "active" : "" %>" >Senadores</a></li>
-            <li class="diputados"><a href="/diputados" class="<%= params[:controller] == 'diputados' ? "active" : "" %>" >Diputados</a></li>
-        </ul>
+<div class="container">
+    <div class="row">
+        <div id="header" class="twelvecol">
+              <% if request.path == '/' %>
+              <h1 class="logo"><a href="/"><span>Congreso Interactivo</span></a></h1>
+              <% else %>
+              <div class="logo"><a href="/"><span>Congreso Interactivo</span></a></div>
+              <% end %>
+            <div id="nav">
+                <ul class="clearfix">
+                    <li class="bloques"><a href="/bloques" class="<%= request.path == '/bloques' ? "active" : "" %>" >Bloques</a></li>
+                    <li class="senadores"><a href="/senadores" class="<%= params[:controller] == 'senators' ? "active" : "" %>" >Senadores</a></li>
+                    <li class="diputados"><a href="/diputados" class="<%= params[:controller] == 'diputados' ? "active" : "" %>" >Diputados</a></li>
+                </ul>
+            </div>
+       </div>
     </div>
-  </div>
-  <div id="main-content">
-    <%= yield %>
-  </div>
-<div id="footer" >
-    <ul class="clearfix">
-        <li><a href="#">Quienes somos</a></li>
-        <li><a href="#">Datos públicos</a></li>
-        <li><a href="#">Creative Commons</a></li>
-        <li><a href="#">Git-Hub</a></li>
-        
-    </ul>
-</div>
+    <div class="row">
+      <div id="main-content" class="twelvecol">
+        <%= yield %>
+      </div>
+    </div>
+    <div class="row">
+        <div id="footer" class"twelvecol last">
+            <ul class="clearfix">
+                <li><a href="#">Quienes somos</a></li>
+                <li><a href="#">Datos públicos</a></li>
+                <li><a href="#">Creative Commons</a></li>
+                <li><a href="#">Git-Hub</a></li>
+            </ul>
+        </div>
+      </div>
 <script type="text/javascript">
 var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-16706768-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); 
 </script>
