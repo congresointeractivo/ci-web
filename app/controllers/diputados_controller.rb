@@ -1,5 +1,6 @@
 class DiputadosController < ApplicationController
   before_filter :setup_filters, :only => [:filter]
+  before_filter :load_districts, :only => [:filter, :index]    
   
   # GET /diputados
   # GET /diputados.xml
@@ -36,6 +37,9 @@ class DiputadosController < ApplicationController
       else
         @diputados = Legislador.diputados.for_party(@parties.first)
       end
+    elsif @filter[:distritos]
+      @district = District.find_by_name(@filter[:distritos])
+      @diputados = @district.diputados
     else
       @diputados = Legislador.diputados
     end
