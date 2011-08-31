@@ -7,6 +7,7 @@ class Senator < Politician
            :countLicense, :countLicensePercentage, :countOfficialMission, 
            :countOfficialMissionPercentage, :countPresent, :countPresentPercentage, 
            :absent, :abstention, :afirmative, :negative, :votes, :partido, :to => :legislador
+  has_one :district, :through => :legislador
            
   set_table_name 'Senador'
 end

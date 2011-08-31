@@ -7,4 +7,15 @@ class Mandato < ActiveRecord::Base
   has_one :diputado, :through => :legislador
   belongs_to :district
   
+  scope :for_senator, joins(:political_party).where("PoliticalParty.type = 'SENADORES'")
+  scope :for_diputado, joins(:political_party).where("PoliticalParty.type = 'DIPUTADOS'")
+  
+  def self.senator_districts
+    Mandato.for_senator.map {|m| m.district }
+  end
+  
+  def self.diputado_districts
+    Mandato.for_diputado.map {|m| m.district }
+  end
+  
 end
