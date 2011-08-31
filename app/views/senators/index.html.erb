@@ -1,10 +1,10 @@
 <h1>Senadores</h1>
 <div class="clearfix">
     
-    <div id="facetas" class="threecol">
+    <div id="facetas" class="twocol">
     <%= render :partial => 'shared/bloques_filter', :locals => { :bloques => @bloques } %>
     </div>
-    <div id="legisladores" class="ninecol last">
+    <div id="legisladores" class="tencol last">
     <%= render :partial => 'shared/politicians', :locals => {:personas => @senators}%>
     </div>
 </div>
