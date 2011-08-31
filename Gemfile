@@ -35,6 +35,12 @@ group :development do
   
   # Deploy with Capistrano
   gem 'capistrano', '2.5.19'
+  
+  # Test with Cucumber
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'launchy'
+  
 end
 
 group :production do  
