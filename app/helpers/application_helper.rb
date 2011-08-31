@@ -5,7 +5,7 @@ module ApplicationHelper
   # Muestra el titulo o un mensaje que no hay titulo
   def display_project_title(project)
     if project.title.blank?
-      "(Sin Título)"      
+      "Sin Título"      
     else
       project.title
     end
@@ -14,7 +14,7 @@ module ApplicationHelper
   # Muestra el sumario o un mensaje que no hay sumario
   def display_project_summary(project)
     if project.summary.blank?
-      "(Sin Sumario)"      
+      "Sin Sumario"      
     else
       project.summary
     end
@@ -23,6 +23,7 @@ module ApplicationHelper
   # AFIRMATIVE
   # ABSENT
   # NEGATIVE
+  # ABSTENTION
   def display_vote_type(type)
     case type.to_sym
       when :AFIRMATIVE
@@ -31,6 +32,8 @@ module ApplicationHelper
         "Ausente"
       when :NEGATIVE
         "Negativo"
+      when :ABSTENTION
+        "Abstención"
       else
         type
     end
