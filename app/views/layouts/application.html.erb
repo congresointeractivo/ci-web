@@ -4,52 +4,7 @@
   <title>Congreso Interactivo</title>
   <link rel="author" href="humans.txt" />
   <%= stylesheet_link_tag :all %>  
-  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "application.js", "chosen.jquery.min.js", 'css3-mediaqueries.js' %>
-  <script type="text/javascript" language="javascript" src="/javascripts/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" charset="utf-8">
-	$(document).ready(function(){
-		$('.legisladores-por-bloque #tabla-funcionarios').dataTable({
-		  "aaSorting": [[1,'asc']],
-		  "bPaginate":false,
-		  "bFilter":true,
-		  //"iDisplayLength": 50,
-		  //"aLengthMenu": [[50, 100, -1], [50, 100, "All"]],
-		  //"sPaginationType": "full_numbers",
-	      "oLanguage": {
-		      "sLengthMenu": "Mostrar _MENU_ legisladores",
-		      "sSearch": "Filtrar:",
-		      "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ legisladores",
-		     "oPaginate": {
-                "sFirst": "",
-                "sPrevious": "&#8592; Anterior",
-                "sNext": "Siguiente &#8594;",
-                "sLast": "",
-            }
-        }
-    });
-		$('.legisladores #tabla-funcionarios').dataTable({
-		  "aaSorting": [[1,'asc']],
-		  "bPaginate":false,
-		  "bFilter":true,
-		  //"iDisplayLength": 50,
-		  //"aLengthMenu": [[50, 100, -1], [50, 100, "All"]],
-		  //"sPaginationType": "full_numbers",
-	      "oLanguage": {
-		      "sLengthMenu": "Mostrar _MENU_ legisladores",
-		      "sSearch": "Filtrar:",
-		      "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ legisladores",
-		     "oPaginate": {
-                "sFirst": "",
-                "sPrevious": "&#8592; Anterior",
-                "sNext": "Siguiente &#8594;",
-                "sLast": "",
-            }
-        }
-    });
-    //necesario para que el corte el float
-    $('#tabla-funcionarios_wrapper').addClass('clearfix');
-    });
-	</script>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "application.js", "chosen.jquery.min.js", 'css3-mediaqueries.js','jquery.dataTables.min.js' %>
 
   <%= csrf_meta_tag %>
 </head>
@@ -64,9 +19,9 @@
               <% end %>
             <div id="nav">
                 <ul class="clearfix">
-                    <li class="bloques"><a href="/bloques" class="<%= request.path == '/bloques' ? "active" : "" %>" >Bloques</a></li>
-                    <li class="senadores"><a href="/senadores" class="<%= params[:controller] == 'senators' ? "active" : "" %>" >Senadores</a></li>
-                    <li class="diputados"><a href="/diputados" class="<%= params[:controller] == 'diputados' ? "active" : "" %>" >Diputados</a></li>
+                    <li class="bloques"><a href="/bloques/" class="<%= request.path == '/bloques' ? "active" : "" %>" >Bloques</a></li>
+                    <li class="senadores"><a href="/senadores/" class="<%= params[:controller] == 'senators' ? "active" : "" %>" >Senadores</a></li>
+                    <li class="diputados"><a href="/diputados/" class="<%= params[:controller] == 'diputados' ? "active" : "" %>" >Diputados</a></li>
                 </ul>
             </div>
        </div>
