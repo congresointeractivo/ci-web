@@ -4,6 +4,7 @@ class SenatorsController < ApplicationController
   # GET /senators
   # GET /senators.xml
   def index
+    @distritos = District.all
     @bloques = PoliticalParty.where(:type => "SENADORES").all
     @senators = sort_and_paginate_legislators(Legislador.senators)
 

@@ -4,6 +4,7 @@ class DiputadosController < ApplicationController
   # GET /diputados
   # GET /diputados.xml
   def index
+    @distritos = District.all
     @bloques = PoliticalParty.where(:type => "DIPUTADOS").all    
     #@diputados = Diputado.all(:include => [:politician], :order => 'Politician.lastName ASC').paginate :page => params[:page], :per_page => 50
     @diputados = Diputado.all(:include => [:politician], :order => 'Politician.lastName ASC')
