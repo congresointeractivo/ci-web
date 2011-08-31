@@ -186,22 +186,26 @@ th{
     
 }
 
-tr:nth-child(odd) td{
+tr.odd td{
   background-color:#F3F3F3;
 }
 td{
   border-top:1px solid #DDD;
   padding:10px;
 }
-.lista-funcionarios .nombre{
+#tabla-funcionarios .nombre{
   font-weight:bold;
 }
-.lista-funcionarios .presentismo,
-.lista-funcionarios .presente,
-.lista-funcionarios .ausente{
+
+#tabla-funcionarios .presentismo,
+#tabla-funcionarios .licencia,
+#tabla-funcionarios .mision,
+#tabla-funcionarios .presente,
+#tabla-funcionarios .ausente{
   text-align:right;
 }
 
+#tabla-funcionarios .nombre{width:25%};
 
 /*-- Tablas: Paginacion */
 /* OVERRIDING
@@ -263,25 +267,24 @@ td{
   display:block;
   text-shadow:0 1px 0 #888888;
 }
+#tabla-funcionarios_wrapper{
+    position:relative;
+    
+}
 .dataTables_info{
-  float: right;
   margin: 20px 0;
   padding: 3px 0;
 }
 .dataTables_length{
-  float: left;
-  width: 40%;
-}
-.dataTables_filter{
-  float: right;
-  text-align: right;
-  width: 50%;
+    position:absolute;
+    top:13px;
+    right:20px;
 }
 
-.legisladores-por-bloque .dataTables_filter{
+.dataTables_filter{
   text-align: left;
-  float:none;
-  width:98%;
+  float:left;
+  width:97%;
   padding:10px;
   background-color:#f0f5f9;
   border:1px solid #cee1f1;
@@ -290,6 +293,13 @@ td{
   -moz-border-radius:5px;
   margin-bottom:25px;
 }
+
+th.bloque{width:21%};
+th.presentismo{width:14%};
+th.presente{width:9%};
+th.ausente{width:9%};
+th.licencia{width:9%};
+th.mision{width:14%};
 
 
 /* Perfil del legislador */
@@ -333,6 +343,7 @@ dd {
 #votos tr.ausente:hover td {
   background-color: #fcf7db;
 }
+
 
 #votos th.como-voto{
     width:75px;
@@ -378,11 +389,31 @@ dd {
     
 }
 
+/* Facetado */
 
-/* Bloques Filter */
+#facetas {
+    }
 
-.bloques-chosen-select {
-  width:500px;
+#facetas .bloques li {
+    line-height:1.5;
+    font-size:90%;
+    margin-bottom:10px;
+}
+
+#facetas li i {
+ color:#5C5C5C;
+ text-decoration:none;
+ font-size:90%;
+ font-style:normal;
+}
+#facetas h3{
+    font-size:100%;
+    text-transform:uppercase;
+    margin:0;
+}
+
+#facetas .elegido{
+    font-weight:bold;
 }
 
 /* Footer */

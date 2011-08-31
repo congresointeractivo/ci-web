@@ -5,8 +5,9 @@ class DiputadosController < ApplicationController
   # GET /diputados.xml
   def index
     @bloques = PoliticalParty.where(:type => "DIPUTADOS").all    
-    @diputados = Diputado.all(:include => [:politician], :order => 'Politician.lastName ASC').paginate :page => params[:page], :per_page => 50
-
+    #@diputados = Diputado.all(:include => [:politician], :order => 'Politician.lastName ASC').paginate :page => params[:page], :per_page => 50
+    @diputados = Diputado.all(:include => [:politician], :order => 'Politician.lastName ASC')
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @diputados }
@@ -38,7 +39,7 @@ class DiputadosController < ApplicationController
       @diputados = Legislador.diputados
     end
 
-    @diputados = sort_and_paginate_legislators(@diputados)
+    #@diputados = sort_and_paginate_legislators(@diputados)
 
     render :action => 'index'
   end

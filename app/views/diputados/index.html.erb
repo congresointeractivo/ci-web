@@ -1,5 +1,10 @@
 <h1>Diputados</h1>
-
-<%= render :partial => 'shared/bloques_filter', :locals => { :bloques => @bloques } %>
-
-<%= render :partial => 'shared/politicians', :locals => {:personas => @diputados}%>
+<div class="clearfix">
+    
+    <div id="facetas" class="twocol">
+    <%= render :partial => 'shared/bloques_filter', :locals => { :bloques => @bloques } %>
+    </div>
+    <div id="legisladores" class="tencol last">
+    <%= render :partial => 'shared/politicians', :locals => {:personas => @diputados}%>
+    </div>
+</div>
