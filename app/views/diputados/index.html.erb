@@ -2,9 +2,12 @@
 <div class="clearfix">
     
     <div id="facetas" class="twocol">
-    <%= render :partial => 'shared/bloques_filter', :locals => { :bloques => @bloques } %>
+      <%= render :partial => 'shared/bloques_filter', :locals => { :bloques => @bloques } %>
     </div>
+    <div id="facetas" class="twocol">
+      <%= render :partial => 'shared/districts_filter', :locals => { :distritos => @distritos } %>
+    </div>    
     <div id="legisladores" class="tencol last">
-    <%= render :partial => 'shared/politicians', :locals => {:personas => @diputados}%>
+      <%= render :partial => 'shared/politicians', :locals => {:personas => @diputados}%>
     </div>
 </div>

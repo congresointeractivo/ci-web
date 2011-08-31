@@ -1,0 +1,17 @@
+<h3>Por Distrito</h3>
+  <ul class="bloques">
+  <% if request.path == '/diputados' or request.path == '/senadores' %>
+    <li class="elegido">Todos</li>
+  <% else %>
+    <li><a href="./">Todos</a></li>
+  <% end %>
+  <% distritos.each do |distrito| %>
+    <% if defined?(@filter) && @filter[:distritos] && @filter[:distritos].include?(distrito.to_s) %>
+      <li class="elegido"><%= distrito %></li>
+    <% else %>
+        <li><a href="./filtrar_por?distritos=<%= distrito %>"><%= distrito %></a></li>
+    <% end %>
+  <% end %>
+    
+    
+  </ul> 
