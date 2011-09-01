@@ -1,17 +1,38 @@
 <h3>Por Distrito</h3>
-  <ul class="bloques">
-  <% if request.path == '/diputados' or request.path == '/senadores' %>
-    <li class="elegido">Todos</li>
-  <% else %>
-    <li><a href="./">Todos</a></li>
-  <% end %>
-  <% distritos.each do |distrito| %>
-    <% if defined?(@filter) && @filter[:distritos] && @filter[:distritos].include?(distrito.to_s) %>
-      <li class="elegido"><%= distrito %></li>
+
+<% distritos.each.with_index do |distrito, index| %>
+
+  <%if index == 0 %>
+    <ul class="distritos">
+    <% if request.path == '/diputados' or request.path == '/senadores' %>
+        <li class="elegido">Todos</li>
     <% else %>
-        <li><a href="./filtrar_por?distritos=<%= distrito %>"><%= distrito %></a></li>
+        <li><a href="./">Todos</a></li>
     <% end %>
   <% end %>
-    
-    
+  <%if index >= 0  %>
+    <% if index == 8 %>
+      <li class="mas"><a href="#">Más distritos &raquo;</a>
+        <div class="mas-facetas">
+          <div class="inner clearfix">
+          <h4>Más bloques</h4>
+        <ul>
+      <% if defined?(@filter) && @filter[:distritos] && @filter[:distritos].include?(distrito.to_s) %>
+        <li class="elegido"><%= distrito %></li>
+      <% else %>
+        <li><a href="./filtrar_por?distritos=<%= distrito %>"><%= distrito %></a></li>
+      <% end %>
+      </li>
+    <% else  %>
+      <% if defined?(@filter) && @filter[:distritos] && @filter[:distritos].include?(distrito.to_s) %>
+      <li class="elegido"><%= distrito %></li>
+      <% else %>
+      <li class="noelegidos"><a href="./filtrar_por?distritos=<%= distrito %>"><%= distrito %></a></li>
+      <% end %>
+    <% end   %>
+  <% end  %>
+  <%if distritos.last == distrito %>
+    </div></div></ul></li>
   </ul> 
+    <% end  %>
+<% end  %>
