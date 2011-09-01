@@ -1,10 +1,10 @@
 class SenatorsController < ApplicationController
   before_filter :setup_filters, :only => [:filter]
+  before_filter :load_districts, :only => [:filter, :index]  
   
   # GET /senators
   # GET /senators.xml
   def index
-    @distritos = District.all
     @bloques = PoliticalParty.where(:type => "SENADORES").all
     @senators = sort_and_paginate_legislators(Legislador.senators)
 
@@ -24,6 +24,9 @@ class SenatorsController < ApplicationController
       else
         @senators = Legislador.senators.for_party(@parties.first)
       end
+    elsif @filter[:distritos]
+      @district = District.find_by_name(@filter[:distritos])
+      @senators = @district.senators
     else
       @senators = Legislador.senators
     end
