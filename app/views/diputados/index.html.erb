@@ -7,6 +7,8 @@
 
     </div>
     <div id="legisladores" class="tencol last">
+      <%if defined?(@filter)%>
       <%= render :partial => 'shared/mensaje', :locals => {:distritos => @filter[:distritos], :bloques => @filter[:bloques]}%>
+      <% end %>
       <%= render :partial => 'shared/politicians', :locals => {:personas => @diputados}%>
     </div>
