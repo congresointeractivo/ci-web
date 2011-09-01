@@ -5,6 +5,7 @@ CiWeb::Application.routes.draw do
 
   root :to => "political_parties#index"
 
+  match 'quienes-somos' => 'static#quienes_somos'
   match 'bloques' => 'political_parties#index'
   match 'senadores' => 'senators#index'
   match 'senadores/filtrar_por' => 'senators#filter'
