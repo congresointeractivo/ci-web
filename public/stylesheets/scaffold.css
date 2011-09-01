@@ -174,7 +174,8 @@ table{
   width: 100%;
   border-collapse: collapse;
 }
-th, .tipo-de-dato{
+
+th, .tipo-de-dato, dt{
   color: #666;
   font-size: 11px;
   font-weight: normal;
@@ -303,8 +304,8 @@ th.mision{width:14%};
 
 
 /* Perfil del legislador */
-dd {
-    margin-bottom:10px;
+dl dd {
+    margin-bottom:15px;
     
     }
 
@@ -323,9 +324,6 @@ dd {
 
 
 /* Votos */
-#votos{
-    float:left;
-}
 #votos tr.positivo:hover td {
   background-color: #e5fcdb;
 }
@@ -361,14 +359,14 @@ dd {
 }
 /*partidos politicos*/
 
-#detalle-presentismo {
+#detalle-presentismo, #detalle-votos {
     border-top:1px dotted lightgrey;
     margin-bottom:40px;
     
     
 }
 
-#detalle-presentismo li {
+#detalle-presentismo li, #detalle-votos li {
     font-size:300%;
     display:inline;
     float:left;
@@ -378,13 +376,13 @@ dd {
     
 }
 
-#detalle-presentismo .tipo-de-dato{
+#detalle-presentismo .tipo-de-dato, #detalle-votos .tipo-de-dato {
     display:block;
     line-height:3;
 }
 
 
-#detalle-presentismo .ultimo{
+#detalle-presentismo .ultimo, #detalle-votos .ultimo {
     border-right:none;
     
 }

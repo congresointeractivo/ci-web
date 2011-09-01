@@ -12,7 +12,7 @@ class PoliticalParty < ActiveRecord::Base
       Senator.find(self.legisladores.map(&:id))
     end
   end
-  
+    
   # returns all parties specified in a 
   # comma separated string. 
   # eg. get_parties('Partido Justicialista,UCR,Frente para la Victoria')
