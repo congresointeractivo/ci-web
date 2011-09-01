@@ -2,22 +2,39 @@
 
 <h1><%= display_project_title(@project) %></h1>  
 
+<% if display_project_summary(@project) != 'Sin Sumario' %>
 <h2>Sumario</h2>
 <div class="summary">
   <%= display_project_summary(@project) %>
 </div>
-
+<% end %>
 <% if @project.documentURL %>
-  Archivo relacionado: <%= @project.documentURL %>
+  <p>Archivo relacionado: <%= @project.documentURL %></p>
 <% end %>
 
-<h2>Detalles</h2>
-Archivo: <%= @project.file %> <br/>
-Iniciado: <%= @project.initiated %> <br/>
-Fuente del Proyecto: <%= @project.projectSource %> <br/>
+<h3>Detalles</h3>
+<dl>
+  <dt>Archivo: </dt><dd><%= @project.file %> </dd>
+  <dt>Iniciado: </dt><dd><%= @project.initiated %></dd>
+  <dt>Fuente del Proyecto: </dt><dd><%= @project.projectSource %></dd>
+  
+</dl>
 
 <h2>Votación</h2>
-
+<ul id="detalle-votos" class="clearfix">
+    <li><%= @project.votes.where(:voteType => 'AFIRMATIVE').count %> 
+    <span class="tipo-de-dato">Votos Positivos</span></li>
+    
+    <li><%= @project.votes.where(:voteType => 'NEGATIVE').count %> 
+    <span class="tipo-de-dato">Votos negativos</span></li>
+    
+    <li> <%= @project.votes.where(:voteType => 'ABSENT').count %> 
+    <span class="tipo-de-dato">Ausentes</span></li>
+    
+    <li class="ultimo"><%= @project.votes.where(:voteType => 'ABSTENTION').count %> 
+    <span class="tipo-de-dato">Abstenidos</span></li>
+</ul>
+<div id="votos">
 <%if @project.votes.count == 0 %>
   <h3>(Todavía no se votó)</h3>
 <% else %>
@@ -28,7 +45,7 @@ Fuente del Proyecto: <%= @project.projectSource %> <br/>
           <th>Bloque</th>
     </thead> 
     <% @project.votes.each do |vote| %>
-    <tr class="<%= vote.voteType.downcase %>">
+    <tr class="<%= display_vote_type(vote.voteType).downcase %>">
         <td><%= display_vote_type(vote.voteType) %></td>
         <td><%= link_to "#{vote.legislador.full_name}", vote.legislador %></td> 
         <td><%=vote.partido ? vote.partido.name : "?" %> </td>
@@ -36,3 +53,4 @@ Fuente del Proyecto: <%= @project.projectSource %> <br/>
     <% end %>
   </table>
 <% end%>
+</div>
