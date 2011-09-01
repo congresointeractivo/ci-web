@@ -60,5 +60,23 @@ $(document).ready(function() {
   //necesario para que el corte el float
   $('#tabla-funcionarios_wrapper').addClass('clearfix');
   
+  //para ocultar y mostrar mas facetas
+  $('.mas').each(function(){
+  		if ($(this).find('.mas-facetas').length) {
+  			var mas_facetas = $(this).find('.mas-facetas');
+  			$(this).find('> a').click(function(e){
+  				e.preventDefault();
+  				if (mas_facetas.hasClass('open')) {
+  					mas_facetas.removeClass('open').hide();
+  				} else {
+  					$('.mas-facetas').removeClass('open').hide();
+  					mas_facetas.addClass('open').show();
+  				}
+  			});
+  		}
+  	});
+  //para tener columnas decentes en los filtros
+  $('.distritos .mas-facetas ul').makeacolumnlists({cols:2,colWidth:150,equalHeight:false,startN:1});
+  $('.bloques .mas-facetas ul').makeacolumnlists({cols:3,colWidth:230,equalHeight:false,startN:1});
 });
 

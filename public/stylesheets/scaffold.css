@@ -390,9 +390,10 @@ dl dd {
 /* Facetado */
 
 #facetas {
+    position: relative;
     }
 
-#facetas .bloques li {
+#facetas .bloques li, #facetas .distritos li {
     line-height:1.5;
     font-size:90%;
     margin-bottom:10px;
@@ -413,7 +414,70 @@ dl dd {
 #facetas .elegido{
     font-weight:bold;
 }
+#facetas .mas{position:relative;}
 
+#facetas .mas-facetas{
+    position:absolute;
+    top:-100px;
+    left:95px;
+    z-index:1;
+    background:url("../images/marcador-facetas.gif") no-repeat 0px 100px;
+    display:none;
+    
+
+}
+
+#facetas .mas-facetas .inner {
+    display:block;
+    width: 690px;
+    background:white;
+    border:4px solid #b3b3b3;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    padding:20px;
+    margin-left:9px;
+    }
+
+#facetas .mas-facetas li {
+    float:left;
+    width:230px;
+    list-style:none;
+    padding:0;
+    margin-left:0;
+}
+
+#facetas .distritos .mas-facetas ul {
+  /*  column-count:3;
+    column-gap:12px;
+    -moz-column-count:3;
+    -moz-column-gap:12px;
+    -webkit-column-count:3;
+    -webkit-column-gap:12px;
+*/
+}
+#facetas .distritos .mas-facetas li {
+    width:150px;
+
+}
+
+#facetas .distritos .mas-facetas .inner{
+    width: 300px;
+    
+} 
+
+.mensaje{
+    background-color:lightyellow;
+    padding:10px;
+    clear:both;
+    font-style:italic;
+    margin-bottom:20px;
+}
+
+.mensaje a{
+    float:right;
+    font-style:normal;
+}
 /* Footer */
 
 #footer {

@@ -1,0 +1,13 @@
+<% if request.path != '/diputados' && request.path != '/senadores' %>
+<div class="mensaje">
+  <p>Refinando por
+  <% if defined?(@filter) && @filter[:distritos] && @filter[:distritos].include?(distritos.to_s)%>
+  <%= distritos%> 
+  <%elsif defined?(@filter) && @filter[:bloques] && @filter[:bloques].include?(bloques.to_s) %>
+  <%= bloques%>
+  <%elsif defined?(@filter) && @filter[:bloques] && @filter[:distritos] && @filter[:bloques].include?(bloques.to_s) && @filter[:distritos].include?(distritos.to_s) %>
+  <%= distritos%> <%= bloques%>
+  <% end %>
+  <a href="./">quitar filtro</a> </p>
+</div>
+<% end %>

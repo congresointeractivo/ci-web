@@ -4,7 +4,7 @@
   <title>Congreso Interactivo</title>
   <link rel="author" href="humans.txt" />
   <%= stylesheet_link_tag :all %>  
-  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "chosen.jquery.min.js", 'css3-mediaqueries.js','jquery.dataTables.min.js', "application.js" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "chosen.jquery.min.js", 'css3-mediaqueries.js','jquery.dataTables.min.js', "application.js", "columnizer.js" %>
   <%= csrf_meta_tag %>
 </head>
 <body id="<%= request.path == '/' ? 'home' : '' %>" >
