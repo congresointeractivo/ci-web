@@ -478,17 +478,55 @@ dl dd {
     float:right;
     font-style:normal;
 }
+
+/* Contenido */
+#contenido .inner{
+    border-right:1px dotted lightgrey;
+}
+
+#contenido ul{
+    margin:10px 0 20px 40px;
+    line-height:1.5;
+    list-style:none;
+}
+
+#contenido h2, #sidebar h2{
+    font-size:130%;
+    font-weight:normal;
+}
+/* sidebar */
+
 /* Footer */
 
 #footer {
   margin-top:20px;
   border-top:1px solid lightgrey;
 }
+#footer li,#footer p {
+    font-size:90%;
+    line-height:4;
+}
+
+#footer p{
+    width:430px;
+    float:left;
+    
+}
+
+#footer p a {
+    vertical-align:sub;
+}
+
+
+#footer ul {
+    float:right;
+    width:430px;
+    text-align:right;
+}
+
 
 #footer li {
-    font-size:90%;
     list-style:none;
     display:inline;
     margin-right:12px;
-    line-height:4;
 }
