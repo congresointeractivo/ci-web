@@ -5,8 +5,10 @@ class SenatorsController < ApplicationController
   # GET /senators
   # GET /senators.xml
   def index
-    @bloques = PoliticalParty.where(:type => "SENADORES").all
-    @senators = sort_and_paginate_legislators(Legislador.senators)
+    @bloques = PoliticalParty.where(:type => "SENADORES").all(:order => 'PoliticalParty.name ASC')
+    @senators = Senator.all(:include => [:politician], :order => 'Politician.lastName ASC')
+    @distritos = District.all(:order => 'District.name ASC')
+    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -50,7 +52,7 @@ class SenatorsController < ApplicationController
   protected
   
   def load_political_parties
-    PoliticalParty.where(:type => "SENADORES").all
+    PoliticalParty.where(:type => "SENADORES").all(:order => 'District.name ASC')
   end
   
 end
