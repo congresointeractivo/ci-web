@@ -5,8 +5,8 @@ class DiputadosController < ApplicationController
   # GET /diputados
   # GET /diputados.xml
   def index
-    @distritos = District.all
-    @bloques = PoliticalParty.where(:type => "DIPUTADOS").all    
+    @distritos = District.all(:order => 'District.name ASC')
+    @bloques = PoliticalParty.where(:type => "DIPUTADOS").all(:order => 'PoliticalParty.name ASC')    
     #@diputados = Diputado.all(:include => [:politician], :order => 'Politician.lastName ASC').paginate :page => params[:page], :per_page => 50
     @diputados = Diputado.all(:include => [:politician], :order => 'Politician.lastName ASC')
     
@@ -52,6 +52,6 @@ class DiputadosController < ApplicationController
   protected
   
   def load_political_parties
-    PoliticalParty.where(:type => "DIPUTADOS").all
+    PoliticalParty.where(:type => "DIPUTADOS").all(:order => 'PoliticalParty.name ASC')
   end
 end

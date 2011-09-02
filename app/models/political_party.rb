@@ -20,7 +20,7 @@ class PoliticalParty < ActiveRecord::Base
     names = parties_string.split(',')
     
     if names.size > 1
-      PoliticalParty.find(:all, :conditions => {:name => names})  
+      PoliticalParty.find(:all, :conditions => {:name => names},:order => 'PoliticalParty.name ASC')  
     else
       PoliticalParty.find(:all, :conditions => ['name = ?', names])  
     end
