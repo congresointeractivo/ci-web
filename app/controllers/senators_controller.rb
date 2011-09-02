@@ -52,7 +52,7 @@ class SenatorsController < ApplicationController
   protected
   
   def load_political_parties
-    PoliticalParty.where(:type => "SENADORES").all(:order => 'District.name ASC')
+    PoliticalParty.where(:type => "SENADORES").all(:order => 'PoliticalParty.name ASC')
   end
   
 end
