@@ -13,4 +13,15 @@ class Project < ActiveRecord::Base
       id
     end
   end
+  
+  def summary_link
+    java_net_url_string = self.summary.to_s
+    
+    debugger
+    if /numexp=(.*)q/ =~ java_net_url_string
+      $1
+    else
+      "#"
+    end
+  end
 end
