@@ -4,7 +4,7 @@
   <title>Congreso Interactivo</title>
   <link rel="author" href="humans.txt" />
   <%= stylesheet_link_tag :all %>  
-  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "chosen.jquery.min.js", 'css3-mediaqueries.js','jquery.dataTables.min.js', "application.js", "columnizer.js" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "jquery.colorbox-min.js", "modales.js", "chosen.jquery.min.js", 'css3-mediaqueries.js','jquery.dataTables.min.js', "application.js", "columnizer.js" %>
   <%= csrf_meta_tag %>
 </head>
 <body id="<%= request.path == '/' ? 'home' : '' %>" >
@@ -38,6 +38,7 @@
                 <li><a href="/quienes-somos">Quienes somos</a></li>
                 <li><a href="#">Metodología</a></li>
                 <li><a href="https://github.com/etagwerker/ci-web/">GitHub</a></li>
+                <li><a id="form-sumate" href="https://docs.google.com/spreadsheet/embeddedform?formkey=dFRmSjdsTkxoallYYmdDNjUtVlllZ3c6MQ">Sumate</a></li>
             </ul>
         </div>
       </div>

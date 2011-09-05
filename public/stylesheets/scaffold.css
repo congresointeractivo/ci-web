@@ -314,7 +314,8 @@ dl dd {
   margin: 0 15px 15px 0;
   padding: 3px;
   border: 1px solid #EEE;
-  max-width:120px;
+  /*max-width:120px;*/
+  max-height: 100px;
 }
 
 #perfil-legislador h1{
@@ -354,8 +355,12 @@ dl dd {
     }
 
 /*twitter legislador*/
-#twitter-legislador, #form-twitter-legislador{
+#twitter-legislador {
     margin-top:70px;
+}
+/*formularios*/
+html body.ss-base-body .ss-form-container .ss-form-heading .ss-required-asterisk{
+	display: none !important;
 }
 /*partidos politicos*/
 
