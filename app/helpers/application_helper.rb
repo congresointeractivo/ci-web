@@ -16,7 +16,12 @@ module ApplicationHelper
     if project.summary.blank?
       "Sin Sumario"      
     else
-      project.summary
+      exp_number = project.summary_link
+      if exp_number == "#"
+        "Sin Sumario"
+      else
+        link_to "Ver Sumario", "http://www1.hcdn.gov.ar/proyxml/expediente.asp?fundamentos=si&numexp=#{exp_number}"        
+      end
     end
   end
   
