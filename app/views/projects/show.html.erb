@@ -15,23 +15,23 @@
 <h3>Detalles</h3>
 <dl>
   <dt>Archivo: </dt><dd><%= @project.file %> </dd>
-  <dt>Iniciado: </dt><dd><%= @project.initiated %></dd>
+  <dt>Iniciado: </dt><dd><%= @project.initiated.strftime("%d/%m/%Y") %></dd>
   <dt>Fuente del Proyecto: </dt><dd><%= @project.projectSource %></dd>
   
 </dl>
 
 <h2>Votación</h2>
 <ul id="detalle-votos" class="clearfix">
-    <li><%= @project.votes.where(:voteType => 'AFIRMATIVE').count %> 
+    <li><%= @afirmative_vote_count %> 
     <span class="tipo-de-dato">Votos Positivos</span></li>
     
-    <li><%= @project.votes.where(:voteType => 'NEGATIVE').count %> 
+    <li><%= @negative_vote_count %> 
     <span class="tipo-de-dato">Votos negativos</span></li>
     
-    <li> <%= @project.votes.where(:voteType => 'ABSENT').count %> 
+    <li> <%= @absent_vote_count %> 
     <span class="tipo-de-dato">Ausentes</span></li>
     
-    <li class="ultimo"><%= @project.votes.where(:voteType => 'ABSTENTION').count %> 
+    <li class="ultimo"><%= @abstention_vote_count %> 
     <span class="tipo-de-dato">Abstenidos</span></li>
 </ul>
 <div id="votos">
