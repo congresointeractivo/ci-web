@@ -81,19 +81,13 @@ padding-left: 20px;
 padding-right: 20px;
 }
 
-/*
-#container{
-  margin:0 auto;
-  width: 960px;
-}
-*/
 
 /* Header */
-#header{
+#header {
     margin-bottom:100px;
     margin:40px 0;
 }
-.logo span{
+.logo span {
   background:url("../images/logo.png") no-repeat top left;
   float: left;
   height:56px;
@@ -101,17 +95,14 @@ padding-right: 20px;
   text-indent:-9999px;
   width:217px;
   margin-right:20px;
-  
-  
-  
 }
-#nav{
+#nav {
   float: left;
   width: 690px;
   margin-top:15px;
 
 }
-#nav a{
+#nav a {
   font-size: 12px;
   text-decoration: none;
   padding: 6px 14px;
@@ -125,44 +116,80 @@ padding-right: 20px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-#nav a:hover{color:#0192B5;background-color:#E8EFF5;}
-#nav a.active{
+#nav a:hover { color:#0192B5;background-color:#E8EFF5; }
+#nav a.active {
   color: white;
   background-color: #719EC3;
   text-shadow: 0 -1px 0 #4D85B4;
 }
-#nav li{
+#nav li {
 	float:left;
 	width:100px;
 	display:inline;
 	list-style:none;
 	padding:0;
 	margin:0;
-	
 }
-#nav li.bloques{width:84px;}
+#nav li.bloques { width:84px; }
 
+/* Generales */
 
-/* Tablas de diputados y senadores */
-#main-content{
-    
-}
-#main-content h1{
+#main-content h1 {
   font-size: 180%;
   font-weight: normal;
   line-height:1.2;
   margin-bottom:20px;
 }
 
-
-h2{
+h2 {
   font-size: 150%;
   font-weight: bold;
   line-height:1.2;
   margin-top:20px;
 }
 
-#home h2{
+/* Home */
+#objetivo-proyecto{
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px dotted #CCC;
+}
+#objetivo-proyecto h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 150%;
+  color: #4D86BB;
+  margin-bottom: 7px;
+}
+#objetivo-proyecto p {
+  font-size: 120%;
+  line-height: 125%;
+}
+#estadisticas-generales {
+  margin-bottom:40px;
+}
+#estadisticas-generales li{
+  font-size: 300%;
+  display: inline;
+  float: left;
+  width: 20%;
+  border-right: 1px dotted lightGrey;
+  padding: 10px 15px;
+  margin: 15px 0;
+}
+#estadisticas-generales strong {
+  font-weight:normal;
+}
+#estadisticas-generales .porcentaje {
+  font-size: 75%;
+}
+#estadisticas-generales a.tipo-de-dato{
+  color: #006285;
+}
+
+/* Tablas de diputados y senadores */
+
+#home h2 {
   font-size: 180%;
   font-weight: normal;
   line-height:1.2;
@@ -208,37 +235,6 @@ td{
 
 #tabla-funcionarios .nombre{width:25%};
 
-/*-- Tablas: Paginacion */
-/* OVERRIDING
-.pagination{margin:20px 0;}
-.pagination a,
-.pagination span,
-.pagination em{
-    color:#666666;
-    display:block;
-    float:left;
-    font-size:12px;
-    font-weight:bold;
-    margin:0;
-    padding:3px 8px;
-    text-decoration:none;
-    text-shadow:0 1px 0 #FFFFFF;
-}
-.pagination span.disabled,
-.pagination a.disabled{
-  color: #CCC;
-}
-.pagination a:visited{color:#999999;}
-.pagination a:hover {color:#0192B5;}                                  
-.pagination em{
-    -moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;
-    background-color:#CCCCCC;
-    color:#FFFFFF;
-    cursor:default;
-    display:block;
-    text-shadow:0 1px 0 #888888;
-}
-*/
 .dataTables_paginate{
   float: left;
   margin: 20px 0;
@@ -381,12 +377,14 @@ html body.ss-base-body .ss-form-container .ss-form-heading .ss-required-asterisk
     
 }
 
-#detalle-presentismo .tipo-de-dato, #detalle-votos .tipo-de-dato {
+#estadisticas-generales .tipo-de-dato,
+#detalle-presentismo .tipo-de-dato, 
+#detalle-votos .tipo-de-dato {
     display:block;
     line-height:3;
 }
 
-
+#estadisticas-generales .ultimo,
 #detalle-presentismo .ultimo, #detalle-votos .ultimo {
     border-right:none;
     

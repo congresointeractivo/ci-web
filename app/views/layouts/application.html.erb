@@ -20,6 +20,7 @@
               <% end %>
             <div id="nav">
                 <ul class="clearfix">
+                   <li class="bloques"><a href="/" class="<%= request.path == '/' ? "active" : "" %>" >Inicio</a></li>
                     <li class="bloques"><a href="/bloques/" class="<%= request.path == '/bloques' ? "active" : "" %>" >Bloques</a></li>
                     <li class="senadores"><a href="/senadores/" class="<%= params[:controller] == 'senators' ? "active" : "" %>" >Senadores</a></li>
                     <li class="diputados"><a href="/diputados/" class="<%= params[:controller] == 'diputados' ? "active" : "" %>" >Diputados</a></li>

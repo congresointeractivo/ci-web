@@ -3,7 +3,7 @@ CiWeb::Application.routes.draw do
   resources :projects, :only => [:index, :show]
   resources :legisladors, :only => [:show]
 
-  root :to => "political_parties#index"
+  root :to => "static#home"
 
   match 'quienes-somos' => 'static#quienes_somos'
   match 'bloques' => 'political_parties#index'
