@@ -9,8 +9,12 @@
 	            <dt>Email:</dt><dd><%= politician.mail %> </dd>
 
                 <% if politician.partido %>
-                <dt>Bloque: </dt><dd><%= politician.partido.name %></dd>  
+                <dt>Bloque: </dt><dd><%= politician.partido.name %></dd>      
+                <% end %>
+                
+                <% if politician.twitter_user.blank? %>
     			<dt>Twitter: </dt><dd><a id="form-twitter-legislador" href="https://docs.google.com/spreadsheet/embeddedform?formkey=dEo0TzVDZTBZek5zODZtNXIxNGVXSWc6MQ">Conocés el usuario de este diputado?</a></dd>
+    			<% end %>
             </dl>
         </div>
 </div>    
@@ -19,7 +23,7 @@
         <h2>Votos</h2>
         <%= render :partial => 'shared/votes', :locals => {:votes => politician.votes}%>
     </div>
-    <% else %>
+    <% unless politician.twitter_user.blank? %>
     <%= render :partial => 'shared/twitter', :locals => {:politician => politician}%>
     <% end %>
 </div>
