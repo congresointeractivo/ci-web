@@ -6,19 +6,19 @@
   <div class="eightcol">
     <ul id="estadisticas-generales">
       <li>
-        <strong class="dato">2567</strong>
+        <strong class="dato"><%= @projects_count %></strong>
         <a href="/projects/" class="tipo-de-dato">Proyectos</a>
       </li>
       <li>
-        <strong class="dato">389</strong>
+        <strong class="dato"><%= @diputados_count %></strong>
         <a href="/diputados/" class="tipo-de-dato">Diputados</a>
       </li>
       <li>
-        <strong class="dato">156</strong>
+        <strong class="dato"><%= @senadores_count %></strong>
         <a href="/senadores/" class="tipo-de-dato">Senadores</a>
       </li>
       <li>
-        <strong class="dato">56<span class="porcentaje">%</span></strong>
+        <strong class="dato"><%= @present_percentage %><span class="porcentaje">%</span></strong>
         <span class="tipo-de-dato">Presentismo</span>
       </li>
       <li>
