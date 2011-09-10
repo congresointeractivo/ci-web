@@ -13,17 +13,17 @@
                 <% end %>
                 
                 <% if politician.twitter_user.blank? %>
-    			<dt>Twitter: </dt><dd><a id="form-twitter-legislador" href="https://docs.google.com/spreadsheet/embeddedform?formkey=dEo0TzVDZTBZek5zODZtNXIxNGVXSWc6MQ">Conocés el usuario de este diputado?</a></dd>
+    			<dt>Twitter: </dt><dd><a id="form-twitter-legislador" href="https://docs.google.com/spreadsheet/embeddedform?formkey=dEo0TzVDZTBZek5zODZtNXIxNGVXSWc6MQ">¿Conocés el Twitter de este legislador?</a></dd>
     			<% end %>
             </dl>
         </div>
-</div>    
-<div class="clearfix">
-    <div id="votos" class="ninecol">
+</div>  
+
+    <div id="votos" class="<%=  politician.twitter_user.blank? ? 'twelvecol' : 'ninecol' %>">
+    <end>
         <h2>Votos</h2>
         <%= render :partial => 'shared/votes', :locals => {:votes => politician.votes}%>
     </div>
     <% unless politician.twitter_user.blank? %>
     <%= render :partial => 'shared/twitter', :locals => {:politician => politician}%>
     <% end %>
-</div>
