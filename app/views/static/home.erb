@@ -6,19 +6,19 @@
   <div class="eightcol">
     <ul id="estadisticas-generales">
       <li>
-        <strong class="dato"><%= @projects_count %></strong>
+        <strong class="dato"><%= number_with_delimiter(@projects_count) %></strong>
         <a href="/projects/" class="tipo-de-dato">Proyectos</a>
       </li>
       <li>
-        <strong class="dato"><%= @diputados_count %></strong>
+        <strong class="dato"><%= number_with_delimiter(@diputados_count) %></strong>
         <a href="/diputados/" class="tipo-de-dato">Diputados</a>
       </li>
       <li>
-        <strong class="dato"><%= @senadores_count %></strong>
+        <strong class="dato"><%= number_with_delimiter(@senadores_count) %></strong>
         <a href="/senadores/" class="tipo-de-dato">Senadores</a>
       </li>
       <li>
-        <strong class="dato"><%= @present_percentage %><span class="porcentaje">%</span></strong>
+        <strong class="dato"><%= number_to_percentage(@present_percentage, :precision => 2) %></strong>
         <span class="tipo-de-dato">Presentismo</span>
       </li>
       <li>
