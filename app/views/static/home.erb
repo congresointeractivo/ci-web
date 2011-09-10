@@ -22,11 +22,11 @@
         <span class="tipo-de-dato">Presentismo</span>
       </li>
       <li>
-        <strong class="dato">38<span class="porcentaje">%</span></strong>
+        <strong class="dato"><%= number_to_percentage(@positive_votes_percentage, :precision => 2) %></strong>
         <span class="tipo-de-dato">Votos positivos</span>
       </li>
       <li>
-        <strong class="dato">47<span class="porcentaje">%</span></strong>
+        <strong class="dato"><%= number_to_percentage(@negative_votes_percentage, :precision => 2) %></strong>
         <span class="tipo-de-dato">Votos negativos</span>
       </li>
     </ul>
