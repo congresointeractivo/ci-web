@@ -19,4 +19,26 @@ class Legislador < Politician
     mandato.political_party if mandato
   end
   
+  # regla de tres simple
+  # si total es 100%
+  # cuanto es el porcentaje
+  # de presentismo
+  def self.total_present_percentage
+    array = self.attendance_array
+    present = array[0]
+    non_present = array[1] + array[2] + array[3]
+    total = present + non_present
+    ((present.to_f / total) * 100).round(2)
+  end
+  
+  protected
+  
+  # consulta SQL para hacer cuentas de presentismo en la tabla de Legislador
+  def self.attendance_array
+    ActiveRecord::Base.connection.execute("SELECT SUM(countPresent), SUM(countAbsence), SUM(countLicense), 
+      SUM(countOfficialMission) FROM Legislador").map do |row| 
+      [row[0].to_i, row[1].to_i, row[2].to_i, row[3].to_i] 
+    end.flatten
+  end
+  
 end
