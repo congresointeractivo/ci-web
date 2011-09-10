@@ -8,7 +8,6 @@ class SenatorsController < ApplicationController
     @bloques = PoliticalParty.where(:type => "SENADORES").all(:order => 'PoliticalParty.name ASC')
     @senators = Senator.all(:include => [:politician], :order => 'Politician.lastName ASC')
     @distritos = District.all(:order => 'District.name ASC')
-    
 
     respond_to do |format|
       format.html # index.html.erb

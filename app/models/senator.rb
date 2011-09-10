@@ -1,4 +1,4 @@
-class Senator < Politician
+class Senator < Politician  
   has_one :politician, :foreign_key => 'id'
   delegate :lastName, :name, :mail, :photoPath, :to => :politician
 
