@@ -9,7 +9,11 @@
   <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "jquery.colorbox-min.js", "modales.js", "chosen.jquery.min.js", 'css3-mediaqueries.js','jquery.dataTables.min.js', "application.js", "columnizer.js" %>
   <%= csrf_meta_tag %>
 </head>
-<body id="<%= request.path == '/' ? 'home' : '' %>" >
+<%if request.path == '/' %>
+<body id="home">
+<%else%>
+<body>
+<%end%>
 <div class="container">
     <div class="row">
         <div id="header" class="twelvecol">
