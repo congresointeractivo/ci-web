@@ -38,6 +38,46 @@ $(document).ready(function() {
           }
       }
   });
+  	$('#votos #tabla-votos').dataTable({
+  	  "aaSorting": [[1,'asc']],
+  	  //"bPaginate":false,
+  	  "bFilter":true,
+  	  "bAutoWidth":false,
+  	  "iDisplayLength": 100,
+  	  "aLengthMenu": [[100, 200, -1], [100, 200, "Todos"]],
+  	  "sPaginationType": "full_numbers",
+        "oLanguage": {
+  	      "sLengthMenu": "Mostrar _MENU_ legisladores",
+  	      "sSearch": "Filtrar:",
+  	      "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ legisladores",
+  	     "oPaginate": {
+              "sFirst": "",
+              "sPrevious": "&#8592; Anterior",
+              "sNext": "Siguiente &#8594;",
+              "sLast": ""
+          }
+      }
+  });
+  	$('#votos .tabla-funcionarios').dataTable({
+  	  "aaSorting": [[1,'asc']],
+  	  //"bPaginate":false,
+  	  "bFilter":true,
+  	  "bAutoWidth":false,
+  	  "iDisplayLength": 100,
+  	  "aLengthMenu": [[100, 200, -1], [100, 200, "Todos"]],
+  	  "sPaginationType": "full_numbers",
+        "oLanguage": {
+  	      "sLengthMenu": "Mostrar _MENU_ legisladores",
+  	      "sSearch": "Filtrar:",
+  	      "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ legisladores",
+  	     "oPaginate": {
+              "sFirst": "",
+              "sPrevious": "&#8592; Anterior",
+              "sNext": "Siguiente &#8594;",
+              "sLast": ""
+          }
+      }
+  });
   	$('.legisladores-por-bloque #tabla-funcionarios').dataTable({
   	  "aaSorting": [[1,'asc']],
   	  "bPaginate":false,

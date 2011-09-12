@@ -264,7 +264,7 @@ td{
   display:block;
   text-shadow:0 1px 0 #888888;
 }
-#tabla-funcionarios_wrapper{
+.dataTables_wrapper{
     position:relative;
     
 }
@@ -280,7 +280,6 @@ td{
 
 .dataTables_filter{
   text-align: left;
-  float:left;
   width:97%;
   padding:10px;
   background-color:#f0f5f9;
@@ -321,24 +320,6 @@ dl dd {
 
 
 /* Votos */
-#votos tr.positivo:hover td {
-  background-color: #e5fcdb;
-}
-/*
-#votos tr.positivo a{color:#456f33;}
-#votos tr.negativo a{color:#542228;}
-#votos tr.ausente a{color:#7e7335;}
-*/
-#votos tr.positivo:hover a,#votos tr.negativo:hover a,#votos tr.ausente:hover a{text-decoration:none;}
-
-#votos tr.negativo:hover td {
-  background-color: #fcdbdf;
-}
-
-#votos tr.ausente:hover td {
-  background-color: #fcf7db;
-}
-
 
 #votos th.como-voto{
     width:75px;

@@ -3,13 +3,11 @@
 <table>
   <tr>
     <th>Título</th>
-    <th></th>
   </tr>
 
 <% @projects.each do |project| %>
   <tr>
-    <td><%= project.title %></td>
-    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to project.title, project %></td>
   </tr>
 <% end %>
 </table>
