@@ -133,7 +133,7 @@ html,body {
 }
 #nav {
   float: left;
-  width: 520px;
+  width: 45%;
   margin-top:14px;
   margin-left:46px;
   text-transform:uppercase;
@@ -145,9 +145,7 @@ html,body {
   color:#4e86b5;
   font-size: 13px;
   text-decoration: none;
-  padding: 3px;
   display: block;
-  margin: 0 5px;
   font-weight: bold;
   text-shadow: 0 1px 0 white;
   font-family: Helvetica, Arial, sans-serif;
@@ -156,7 +154,7 @@ html,body {
 #nav a:hover { color:#F47A14; }
 #nav li.active a {
   color: #868686;
-  height:45px;
+  height:54px;
   border-bottom:8px solid #efefef;
 	
   }
@@ -166,20 +164,19 @@ html,body {
 }
 #nav li {
 	float:left;
-	padding: 3px;
 	margin:0px;
 	display:inline;
 	list-style:none;
   padding-bottom:0;
-	margin:0;
-	height:65px;
+	margin-right:5px;
+	height:68px;
 
 }
-#nav li.inicio {width:58px;}
-#nav li.proyectos { width:105px; }
-#nav li.senadores { width:108px; }
-#nav li.diputados { width:101px; }
-#nav li.bloques { width:100px; }
+#nav li.inicio {width:10%;}
+#nav li.proyectos { width:21%; }
+#nav li.senadores { width:21%; }
+#nav li.diputados { width:21%; }
+#nav li.bloques { width:17%; }
 
 
 /* Generales */
@@ -283,7 +280,7 @@ h2 {
   
 }
 
-p.sumate a{
+p.sumate a {
   padding:8px 10px 6px;
   border-radius:15px;
   -webkit-border-radius:15px;
@@ -294,21 +291,15 @@ p.sumate a{
   text-decoration:none;
   font-weight:bold;
   font-size:85%;
-  /* fallback */ 
   background-color:#f47714; 
-  /* Safari 4-5, Chrome 1-9 */ 
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f68c17), to(#f36911)); 
-  /* Safari 5.1, Chrome 10+ */ 
   background: -webkit-linear-gradient(top, #f68c17, #f36911); 
-  /* Firefox 3.6+ */ 
   background: -moz-linear-gradient(top, #f68c17, #f36911); 
-  /* IE 10 */ 
   background: -ms-linear-gradient(top, #f68c17, #f36911); 
-  /* Opera 11.10+ */ 
   background: -o-linear-gradient(top, #f68c17, #f36911);
   
 }
-p.sumate a:hover{
+p.sumate a:hover {
   color:#fdf6d8;
   background-color:#f47714; 
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f36911), to(#f68c17)); 
