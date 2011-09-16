@@ -189,7 +189,6 @@ html,body {
   font-size: 180%;
   font-weight: normal;
   line-height:1.2;
-  text-shadow:3px 3px 0 #e7e7e7;
   
 }
 
@@ -205,6 +204,8 @@ h2 {
   margin-bottom: 28px;
   padding-bottom: 15px;
   text-align:center;
+  text-shadow:3px 3px 0 #e7e7e7;
+
 }
 #objetivo-proyecto h1 {
   font-size: 456%;
