@@ -14,4 +14,10 @@ $(document).ready(function() {
 		innerWidth : w,
 		innerHeight : h
 	});
+	//Formulario Sumate
+	$(".sumate a").colorbox({
+		iframe : true,
+		innerWidth : w,
+		innerHeight : h
+	});
 });
