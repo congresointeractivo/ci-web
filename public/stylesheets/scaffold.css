@@ -189,6 +189,7 @@ html,body {
   font-size: 180%;
   font-weight: normal;
   line-height:1.2;
+  margin-bottom:19px;
   
 }
 
@@ -196,7 +197,7 @@ h2 {
   font-family:'CartoGothicStdBold', Helvetica, Arial;
   font-weight: bold;
   line-height:1.2;
-  margin-top:20px;
+  margin-bottom:19px;
 }
 
 /* Home */
@@ -204,7 +205,6 @@ h2 {
   margin-bottom: 28px;
   padding-bottom: 15px;
   text-align:center;
-  text-shadow:3px 3px 0 #e7e7e7;
 
 }
 #objetivo-proyecto h1 {
@@ -212,6 +212,8 @@ h2 {
   color: #f47a14;
   margin-bottom: 1%;
   margin-top:8px;
+  text-shadow:3px 3px 0 #e7e7e7;
+
 }
 #objetivo-proyecto p {
   font-family:'CartoGothicStdBook', Helvetica, Arial;
