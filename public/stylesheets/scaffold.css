@@ -1,3 +1,30 @@
+@font-face {
+    font-family: 'CartoGothicStdBook';
+    src: url('font/CartoGothicStd-Book-webfont.eot');
+    src: url('font/CartoGothicStd-Book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/CartoGothicStd-Book-webfont.woff') format('woff'),
+         url('font/CartoGothicStd-Book-webfont.ttf') format('truetype'),
+         url('font/CartoGothicStd-Book-webfont.svg#CartoGothicStdBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CartoGothicStdBold';
+    src: url('font/CartoGothicStd-Bold-webfont.eot');
+    src: url('font/CartoGothicStd-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/CartoGothicStd-Bold-webfont.woff') format('woff'),
+         url('font/CartoGothicStd-Bold-webfont.ttf') format('truetype'),
+         url('font/CartoGothicStd-Bold-webfont.svg#CartoGothicStdBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
 body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
@@ -55,13 +82,17 @@ div.field, div.actions {
   list-style: square;
 }
 
-h3{
+h3 {
     font-weight:bold;
     font-size:85%;
     line-height:20px;
-    margin:20px 0 0 0;
+    margin:19px 0 19px 0;
+    
     
 }
+
+h2 {line-height:1.5;margin-bottom:1p;}
+p {margin-bottom:19px; line-height:1.5;}
 
 /* Util */
 .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
@@ -71,22 +102,26 @@ h3{
 
 
 /* Layout */
-html,body{
+html,body {
   margin: 0;
   padding: 0;
   width:100%;
 }
 .container {
-padding-left: 20px;
-padding-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  /*background:url("../images/bg_dummy.gif") -8px 0 no-repeat;*/
 }
 
 
 /* Header */
 #header {
     margin-bottom:100px;
-    margin:40px 0;
+    margin:24px 0;
+    border-bottom:1px solid #e5e5e5;
+    height:76px;
 }
+
 .logo span {
   background:url("../images/logo.png") no-repeat top left;
   float: left;
@@ -98,51 +133,68 @@ padding-right: 20px;
 }
 #nav {
   float: left;
-  width: 690px;
-  margin-top:15px;
+  width: 520px;
+  margin-top:14px;
+  margin-left:46px;
+  text-transform:uppercase;
 
 }
+
+
 #nav a {
-  font-size: 12px;
+  color:#4e86b5;
+  font-size: 13px;
   text-decoration: none;
-  padding: 6px 14px;
+  padding: 3px;
   display: block;
-  float: left;
   margin: 0 5px;
   font-weight: bold;
   text-shadow: 0 1px 0 white;
   font-family: Helvetica, Arial, sans-serif;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  text-align:center;
 }
-#nav a:hover { color:#0192B5;background-color:#E8EFF5; }
-#nav a.active {
-  color: white;
-  background-color: #719EC3;
-  text-shadow: 0 -1px 0 #4D85B4;
+#nav a:hover { color:#F47A14; }
+#nav li.active a {
+  color: #868686;
+  height:45px;
+  border-bottom:8px solid #efefef;
+	
+  }
+
+#nav li.active{
+  background:url("../images/bottom-arrow.gif") 50% bottom no-repeat;
 }
 #nav li {
 	float:left;
-	width:100px;
+	padding: 3px;
+	margin:0px;
 	display:inline;
 	list-style:none;
-	padding:0;
+  padding-bottom:0;
 	margin:0;
+	height:65px;
+
 }
-#nav li.bloques { width:84px; }
+#nav li.inicio {width:58px;}
+#nav li.proyectos { width:105px; }
+#nav li.senadores { width:108px; }
+#nav li.diputados { width:101px; }
+#nav li.bloques { width:100px; }
+
 
 /* Generales */
 
 #main-content h1 {
+  font-family:'CartoGothicStdBold', Helvetica, Arial;
   font-size: 180%;
   font-weight: normal;
   line-height:1.2;
-  margin-bottom:20px;
+  text-shadow:3px 3px 0 #e7e7e7;
+  
 }
 
 h2 {
-  font-size: 150%;
+  font-family:'CartoGothicStdBold', Helvetica, Arial;
   font-weight: bold;
   line-height:1.2;
   margin-top:20px;
@@ -150,41 +202,131 @@ h2 {
 
 /* Home */
 #objetivo-proyecto{
-  margin-bottom: 15px;
+  margin-bottom: 28px;
   padding-bottom: 15px;
-  border-bottom: 1px dotted #CCC;
+  text-align:center;
 }
 #objetivo-proyecto h1 {
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 150%;
-  color: #4D86BB;
-  margin-bottom: 7px;
+  font-size: 456%;
+  color: #f47a14;
+  margin-bottom: 1%;
+  margin-top:8px;
 }
 #objetivo-proyecto p {
-  font-size: 120%;
-  line-height: 125%;
+  font-family:'CartoGothicStdBook', Helvetica, Arial;
+  font-size: 140%;
+  line-height: 150%;
+  color:#393939;
+  width:95%;
+  margin:0 auto;
 }
 #estadisticas-generales {
-  margin-bottom:40px;
+  margin-bottom:130px;
+  line-height:1;
 }
+#estadisticas-generales .twocol {
+/*overrides 1140.css*/
+  width:13.2%;
+  margin: 0 0;
+  padding: 10px 1.6%;
+  
+}
+
 #estadisticas-generales li{
-  font-size: 300%;
-  display: inline;
-  float: left;
-  width: 20%;
   border-right: 1px dotted lightGrey;
-  padding: 10px 15px;
-  margin: 15px 0;
+  list-style:none;
+  text-align:center;
+  
 }
+
+#estadisticas-generales .last {
+  border-right:none;
+}
+
 #estadisticas-generales strong {
+  font-size: 360%;
+  font-family:'CartoGothicStdBook', Helvetica, Arial;
   font-weight:normal;
 }
+
 #estadisticas-generales .porcentaje {
   font-size: 75%;
 }
-#estadisticas-generales a.tipo-de-dato{
+#estadisticas-generales a, #estadisticas-generales span{
+  /*color: #006285;*/
+  text-transform:uppercase;
+  font-size: 85%;
+  display:block;
+  
+}
+
+#estadisticas-generales a {
   color: #006285;
+}
+
+/*Home sidebar*/
+#home #sidebar {
+  
+}
+#home #sidebar .fourcol {
+  /*overrides 1440.css*/
+  width:30%;
+  margin:0;
+  padding: 0 2%;
+  
+}
+#home #sidebar .fourcol p {
+  margin-bottom:20px;
+  
+}
+
+p.sumate a{
+  padding:8px 10px 6px;
+  border-radius:15px;
+  -webkit-border-radius:15px;
+  -moz-border-radius:15px;
+  border:1px solid #eed1a5;
+  color:#fff;
+  text-transform:uppercase;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:85%;
+  /* fallback */ 
+  background-color:#f47714; 
+  /* Safari 4-5, Chrome 1-9 */ 
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f68c17), to(#f36911)); 
+  /* Safari 5.1, Chrome 10+ */ 
+  background: -webkit-linear-gradient(top, #f68c17, #f36911); 
+  /* Firefox 3.6+ */ 
+  background: -moz-linear-gradient(top, #f68c17, #f36911); 
+  /* IE 10 */ 
+  background: -ms-linear-gradient(top, #f68c17, #f36911); 
+  /* Opera 11.10+ */ 
+  background: -o-linear-gradient(top, #f68c17, #f36911);
+  
+}
+p.sumate a:hover{
+  color:#fdf6d8;
+  background-color:#f47714; 
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f36911), to(#f68c17)); 
+  background: -webkit-linear-gradient(top, #f36911, #f68c17); 
+  background: -moz-linear-gradient(top, #f36911, #f68c17); 
+  background: -ms-linear-gradient(top, #f68c17, #f36911); 
+  background: -o-linear-gradient(top, #f68c17, #f36911);
+  text-shadow: 0px -1px 0px #e94903;
+}
+
+#home #sidebar .last {
+  /*overrides 1440.css*/
+  margin:0;
+  padding: 0 0 0 1.6%;
+  border-right:none;
+  
+}
+
+
+#sidebar .fourcol h2{
+    font-size:170%;
 }
 
 /* Tablas de diputados y senadores */

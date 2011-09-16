@@ -1,39 +1,58 @@
+<div class="row">
 <div class="twelvecol">
-  <div id="objetivo-proyecto" class="twelvecol">
+  <div id="objetivo-proyecto">
     <h1>Mejorar la transparencia legislativa</h1>
     <p>Congreso Interactivo re&uacute;ne la informaci&oacute;n que publica en internet el Congreso de la Naci&oacute;n, simplificando su acceso y utilizaci&oacute;n. Queremos que sea un espacio de di&aacute;logo en el que confluyan periodistas, investigadores, activistas y todas aquellas personas interesadas en participar de manera m&aacute;s activa en la vida democr&aacute;tica.</p>
   </div>
-  <div class="eightcol">
+</div>
+</div>
+<div class="row">
     <ul id="estadisticas-generales">
-      <li>
+      <li class="twocol first">
         <strong class="dato"><%= number_with_delimiter(@projects_count) %></strong>
-        <a href="/projects/" class="tipo-de-dato">Proyectos</a>
+        <a href="/projects/">Proyectos</a>
       </li>
-      <li>
+      <li class="twocol">
         <strong class="dato"><%= number_with_delimiter(@diputados_count) %></strong>
-        <a href="/diputados/" class="tipo-de-dato">Diputados</a>
+        <a href="/diputados/">Diputados</a>
       </li>
-      <li>
+      <li class="twocol">
         <strong class="dato"><%= number_with_delimiter(@senadores_count) %></strong>
-        <a href="/senadores/" class="tipo-de-dato">Senadores</a>
+        <a href="/senadores/">Senadores</a>
       </li>
-      <li>
-        <strong class="dato"><%= number_to_percentage(@present_percentage, :precision => 2) %></strong>
-        <span class="tipo-de-dato">Presentismo</span>
+      <li class="twocol">
+        <strong class="dato"><%= number_to_percentage(@present_percentage, :precision => 1) %></strong>
+        <span>Presentismo</span>
       </li>
-      <li>
-        <strong class="dato"><%= number_to_percentage(@positive_votes_percentage, :precision => 2) %></strong>
-        <span class="tipo-de-dato">Votos positivos</span>
+      <li class="twocol">
+        <strong class="dato"><%= number_to_percentage(@positive_votes_percentage, :precision => 1) %></strong>
+        <span>Votos positivos</span>
       </li>
-      <li>
-        <strong class="dato"><%= number_to_percentage(@negative_votes_percentage, :precision => 2) %></strong>
-        <span class="tipo-de-dato">Votos negativos</span>
+      <li class="twocol last">
+        <strong class="dato"><%= number_to_percentage(@negative_votes_percentage, :precision => 1) %></strong>
+        <span>Votos negativos</span>
       </li>
     </ul>
-  </div>
-  <div id="sidebar" class="fourcol last">
-    <h2>Sumate</h2>
-    <p><strong>Congreso Interactivo</strong> es un proyecto abierto y hecho a pulm&oacute;n donde pod&eacute;s ayudar de maneras muy diversas: <strong>dise&ntilde;o</strong>, <strong>desarrollo</strong>, <strong>comunicaci&oacute;n</strong>, <strong>pedagog&iacute;a</strong>, etc. Si te interesa la transparencia pol&iacute;tica y quer&eacute;s hacer algo desde tu lugar, te invitamos a <a href="https://docs.google.com/spreadsheet/embeddedform?formkey=dFRmSjdsTkxoallYYmdDNjUtVlllZ3c6MQ">contactarnos</a></p>
-    
-  </div>
+</div>
+<div id="sidebar" class="row">
+    <div class="fourcol">
+      <h2>Quienes somos</h2>
+      <p>Somos un grupo de diseñadores, desarrolladores y comunicadores independientes, interesados en construir herramientas que abran las puertas a una democracia más transparente y participativa. 
+      </p>
+      <p><a href="/quienes-somos">Más sobre nosotros &raquo;</a></p>
+      </div>
+      <div class="fourcol">
+        <h2>Sumate</h2>
+        <p><strong>Congreso Interactivo</strong> es un proyecto abierto y hecho a pulm&oacute;n donde pod&eacute;s ayudar de maneras muy diversas: <strong>dise&ntilde;o</strong>, <strong>desarrollo</strong>, <strong>comunicaci&oacute;n</strong>, <strong>pedagog&iacute;a</strong>, etc. Si te interesa la transparencia pol&iacute;tica y quer&eacute;s hacer algo desde tu lugar, te invitamos a contactarnos.</p>
+        <p class="sumate"><a href="https://docs.google.com/spreadsheet/embeddedform?formkey=dFRmSjdsTkxoallYYmdDNjUtVlllZ3c6MQ">Sumate al proyecto</a></p>
+        
+      </div>
+      <div class="fourcol last">
+        <h2>En redes sociales</h2>
+        <ul>
+          <li class="twitter-icon"><a href="">Twitter</a></li>
+          <li class="facebook-icon"><a href="">Facebook</a></li>
+          <li class="twitter-icon"><a href="">Twitter</a></li> 
+        </ul>
+      </div>
 </div>

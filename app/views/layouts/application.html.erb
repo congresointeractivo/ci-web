@@ -24,11 +24,21 @@
               <% end %>
             <div id="nav">
                 <ul class="clearfix">
-                   <li class="bloques"><a href="/" class="<%= request.path == '/' ? "active" : "" %>" >Inicio</a></li>
-                    <li class="bloques"><a href="/bloques/" class="<%= request.path == '/bloques' ? "active" : "" %>" >Bloques</a></li>
-                    <li class="senadores"><a href="/senadores/" class="<%= params[:controller] == 'senators' ? "active" : "" %>" >Senadores</a></li>
-                    <li class="diputados"><a href="/diputados/" class="<%= params[:controller] == 'diputados' ? "active" : "" %>" >Diputados</a></li>
-                    <li class="proyectos"><a href="/projects/" class="<%= params[:controller] == 'projects' ? "active" : "" %>" >Proyectos</a></li>                    
+                   <li class="inicio<%= request.path == '/' ? " active" : "" %>">
+                     <a href="/" >Inicio</a>
+                   </li>
+                   <li class="proyectos<%= params[:controller] == 'projects' ? " active" : "" %>">
+                     <a href="/projects/">Proyectos</a>
+                    </li>                    
+                   <li class="senadores<%= params[:controller] == 'senators' ? " active" : "" %>">
+                     <a href="/senadores/">Senadores</a>
+                   </li>
+                   <li class="diputados<%= params[:controller] == 'diputados' ? " active" : "" %>">
+                     <a href="/diputados/">Diputados</a>
+                   </li>
+                   <li class="bloques<%= params[:controller] == 'political_parties' ? " active" : "" %>">
+                      <a href="/bloques/">Bloques</a>
+                   </li>
                 </ul>
             </div>
        </div>
