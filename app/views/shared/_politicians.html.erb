@@ -13,7 +13,7 @@
   <tbody>
 <% personas.each do |persona| %>
     <tr>
-      <td class="nombre"><%= link_to "#{persona.lastName}, #{persona.name}", persona %></td>
+      <td class="nombre"><%= link_to "#{persona.lastName}, #{persona.name}", calculate_legislator_path(persona) %></td>
       <td class="bloque"><%= persona.partido %></td>
       <td class="presentismo"><%= number_to_percentage(persona.present_percentage * 100.0, :precision => 0, :separator => ',') %></td>        
       <td class="presente"><%= persona.countPresent %></td>

@@ -20,14 +20,14 @@
       <% if defined?(@filter) && @filter[:bloques] && @filter[:bloques].include?(bloque.to_s) %>
         <li class="elegido"><%= bloque %>&nbsp;<i>(<%= bloque.miembros.count %>)</i></li>
       <% else %>
-        <li><a href="./filtrar_por?bloques=<%= bloque %>"><%= bloque %></a>&nbsp;<i>(<%= bloque.miembros.count %>)</i></li>
+        <li><a href="<%= filter_action_path %>?bloques=<%= bloque %>"><%= bloque %></a>&nbsp;<i>(<%= bloque.miembros.count %>)</i></li>
       <% end %>
       </li>
     <% else  %>
       <% if defined?(@filter) && @filter[:bloques] && @filter[:bloques].include?(bloque.to_s) %>
       <li class="elegido"><%= bloque %>&nbsp;<i>(<%= bloque.miembros.count %>)</i></li>
       <% else %>
-      <li><a href="./filtrar_por?bloques=<%= bloque %>"><%= bloque %></a>&nbsp;<i>(<%= bloque.miembros.count %>)</i></li>
+      <li><a href="<%= filter_action_path %>?bloques=<%= bloque %>"><%= bloque %></a>&nbsp;<i>(<%= bloque.miembros.count %>)</i></li>
       <% end %>
     <% end   %>
   <% end  %>

@@ -20,14 +20,14 @@
       <% if defined?(@filter) && @filter[:distritos] && @filter[:distritos].include?(distrito.to_s) %>
         <li class="elegido"><%= distrito %></li>
       <% else %>
-        <li><a href="./filtrar_por?distritos=<%= distrito %>"><%= distrito %></a></li>
+        <li><a href="<%= filter_action_path %>?distritos=<%= distrito %>"><%= distrito %></a></li>
       <% end %>
       </li>
     <% else  %>
       <% if defined?(@filter) && @filter[:distritos] && @filter[:distritos].include?(distrito.to_s) %>
       <li class="elegido"><%= distrito %></li>
       <% else %>
-      <li class="noelegidos"><a href="./filtrar_por?distritos=<%= distrito %>"><%= distrito %></a></li>
+      <li class="noelegidos"><a href="<%= filter_action_path %>?distritos=<%= distrito %>"><%= distrito %></a></li>
       <% end %>
     <% end   %>
   <% end  %>
