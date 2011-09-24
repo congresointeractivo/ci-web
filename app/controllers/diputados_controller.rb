@@ -1,6 +1,8 @@
 class DiputadosController < ApplicationController
   before_filter :setup_filters, :only => [:filter]
   before_filter :load_districts, :only => [:filter, :index]    
+  helper_method :calculate_legislator_path
+  helper_method :filter_action_path  
   
   # GET /diputados
   # GET /diputados.xml
@@ -54,4 +56,13 @@ class DiputadosController < ApplicationController
   def load_political_parties
     PoliticalParty.where(:type => "DIPUTADOS").all(:order => 'PoliticalParty.name ASC')
   end
+  
+  def calculate_legislator_path(legislator)
+    diputado_path(legislator)
+  end
+  
+  def filter_action_path
+    "/diputados/filtrar_por"
+  end
+  
 end

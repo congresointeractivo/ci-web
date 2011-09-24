@@ -1,6 +1,8 @@
 class SenatorsController < ApplicationController
   before_filter :setup_filters, :only => [:filter]
   before_filter :load_districts, :only => [:filter, :index]  
+  helper_method :calculate_legislator_path  
+  helper_method :filter_action_path
   
   # GET /senators
   # GET /senators.xml
@@ -52,6 +54,14 @@ class SenatorsController < ApplicationController
   
   def load_political_parties
     PoliticalParty.where(:type => "SENADORES").all(:order => 'PoliticalParty.name ASC')
+  end
+  
+  def calculate_legislator_path(legislator)
+    senator_path(legislator)
+  end
+  
+  def filter_action_path
+    "/senadores/filtrar_por"
   end
   
 end
