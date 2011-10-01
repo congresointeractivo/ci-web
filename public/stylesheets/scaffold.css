@@ -425,6 +425,23 @@ td{
   -moz-border-radius:5px;
   margin-bottom:25px;
 }
+th.sorting,
+th.sorting_desc,
+th.sorting_asc{
+  cursor:pointer;
+}
+th.sorting,
+th.sorting_desc,
+th.sorting_asc{
+  background: url(../images/sort-table-arrows.png) no-repeat right -27px;
+  padding-right: 12px;
+}
+th.sorting_asc{
+  background-position: right 10px;
+}
+th.sorting_desc{
+  background-position: right -63px;
+}
 
 th.bloque{width:21%};
 th.presentismo{width:14%};
