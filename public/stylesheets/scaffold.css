@@ -178,6 +178,36 @@ html,body {
 #nav li.diputados { width:21%; }
 #nav li.bloques { width:17%; }
 
+#buscar {
+  float:left;
+  width:300px;
+  margin:6px 0 0 30px;
+}
+
+#buscar .input-text {
+  width:230px;
+  color:#b9b8b8;
+  border-radius:3px 0px 0px 3px;
+  border:1px solid #d9d7d7;
+  padding:2px 0 0px 5px;
+  height:28px;
+  
+}
+#buscar .input-button {
+  padding:7px;
+  height:32px;
+  background-color:#89aece;
+  text-transform:uppercase;
+  color:#fff;
+  border:1px solid #89aece;
+  text-shadow:0 -1px 0 #5f7e99;
+  border-radius:0px 3px 3px 0px;
+  margin-left:-5px;
+  
+  
+}
+
+
 
 /* Generales */
 
