@@ -21,7 +21,10 @@
   <dt>Fuente del Proyecto: </dt><dd><%= @project.projectSource %></dd>
   
 </dl>
-
+<div id="votos">
+<%if @project.votes.count == 0 %>
+  <h3>Todavía no se votó, o la votación no está disponible en el sitio</h3>
+<% else %>
 <h2>Votación</h2>
 <ul id="detalle-votos" class="clearfix">
     <li><%= @afirmative_vote_count %> 
@@ -36,10 +39,7 @@
     <li class="ultimo"><%= @abstention_vote_count %> 
     <span class="tipo-de-dato">Abstenidos</span></li>
 </ul>
-<div id="votos">
-<%if @project.votes.count == 0 %>
-  <h3>Todavía no se votó, o la votación no está disponible en el sitio</h3>
-<% else %>
+
  <table class="tabla-funcionarios">
     <thead>
           <th>Cómo Votó</th>
