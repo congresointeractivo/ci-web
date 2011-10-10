@@ -3,23 +3,23 @@
     <tr>
       <th>Nombre</th>
       <th class="bloque">Bloque</th>
-      <th class="presentismo">Presencia (%)</th>      
+      <th class="presentismo">Presencia (%)</th>
       <th class="presente">Presencias</th>
-      <th class="ausente">Ausencias</th>        
-      <th class="licencia">Licencia</th>            
-      <th class="mision">Misión Oficial</th>                
+      <th class="ausente">Ausencias</th>
+      <th class="licencia">Licencia</th>
+      <th class="mision">Misión Oficial</th>
     </tr>
   </thead>
   <tbody>
 <% personas.each do |persona| %>
     <tr>
-      <td class="nombre"><%= link_to "#{persona.lastName}, #{persona.name}", calculate_legislator_path(persona) %></td>
+      <td class="nombre"><%= link_to "#{persona.lastName}, #{persona.name}", url_for(persona) %></td>
       <td class="bloque"><%= persona.partido %></td>
-      <td class="presentismo"><%= number_to_percentage(persona.present_percentage * 100.0, :precision => 0, :separator => ',') %></td>        
+      <td class="presentismo"><%= number_to_percentage(persona.present_percentage * 100.0, :precision => 0, :separator => ',') %></td>
       <td class="presente"><%= persona.countPresent %></td>
-      <td class="ausente"><%= persona.countAbsence %></td>    
-      <td class="licencia"><%= persona.countLicense %></td>    
-      <td class="mision"><%= persona.countOfficialMission %></td>            
+      <td class="ausente"><%= persona.countAbsence %></td>
+      <td class="licencia"><%= persona.countLicense %></td>
+      <td class="mision"><%= persona.countOfficialMission %></td>
     </tr>
 <% end %>
   </tbody>
@@ -27,3 +27,4 @@
 
 
 <%# raw page_entries_info personas, :entry_name => 'Legisladores' %>
+
