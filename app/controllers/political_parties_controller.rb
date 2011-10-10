@@ -21,4 +21,5 @@ class PoliticalPartiesController < ApplicationController
       format.xml  { render :xml => @political_party }
     end
   end
+
 end

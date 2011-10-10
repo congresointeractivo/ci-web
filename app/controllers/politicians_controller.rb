@@ -20,5 +20,5 @@ class PoliticiansController < ApplicationController
       format.xml  { render :xml => @politician }
     end
   end
-
+  
 end
