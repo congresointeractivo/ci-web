@@ -28,7 +28,7 @@ $(document).ready(function() {
   	  "sPaginationType": "full_numbers",
         "oLanguage": {
   	      "sLengthMenu": "Mostrar _MENU_ legisladores",
-  	      "sSearch": "Filtrar:",
+  	      "sSearch": "Filtrar por Nombre:",
   	      "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ legisladores",
   	     "oPaginate": {
               "sFirst": "",
@@ -48,7 +48,7 @@ $(document).ready(function() {
   	  "sPaginationType": "full_numbers",
         "oLanguage": {
   	      "sLengthMenu": "Mostrar _MENU_ legisladores",
-  	      "sSearch": "Filtrar:",
+  	      "sSearch": "Filtrar por nombre:",
   	      "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ legisladores",
   	     "oPaginate": {
               "sFirst": "",
@@ -68,7 +68,7 @@ $(document).ready(function() {
   	  "sPaginationType": "full_numbers",
         "oLanguage": {
   	      "sLengthMenu": "Mostrar _MENU_ legisladores",
-  	      "sSearch": "Filtrar:",
+  	      "sSearch": "Filtrar por nombre:",
   	      "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ legisladores",
   	     "oPaginate": {
               "sFirst": "",
@@ -87,7 +87,7 @@ $(document).ready(function() {
   	  //"sPaginationType": "full_numbers",
         "oLanguage": {
   	      "sLengthMenu": "Mostrar _MENU_ legisladores",
-  	      "sSearch": "Filtrar:",
+  	      "sSearch": "Filtrar por nombre:",
   	      "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ legisladores",
   	     "oPaginate": {
               "sFirst": "",

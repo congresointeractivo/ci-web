@@ -4,25 +4,34 @@ Utiliza el dump de monitor ciudadano: ~/data/monitor_ciudadano_dump.sql
 
 ## Requisitos
 
-* MySQL (>= 5.1.39)
-* Rails 3.0.9
-* Ruby 1.9.2-p0
+    MySQL (>= 5.1.39)
+    Rails 3.0.9
+    Ruby 1.9.2-p0
 
 ## Instalación
 
 ### Para Desarrollo
 
-* git clone git@github.com:etagwerker/ci-web.git
-* cd ci-web
-* cp config/database.yml.sample config/database.yml
-* gem install bundler --no-ri --no-rdoc
-* bundle install
-* rake db:create:all
-* mysql --database=ci_development < data/monitor_ciudadano_dump.sql
-* rake db:migrate
-* rails server
-
+    git clone git@github.com:etagwerker/ci-web.git
+    cd ci-web
+    cp config/database.yml.sample config/database.yml
+    gem install bundler --no-ri --no-rdoc
+    bundle install
+    rake db:create:all
+    mysql --database=ci_development < data/monitor_ciudadano_dump.sql
+    rake db:migrate
+    rails server
+    
 Nota: Vas a tener que revisar config/database.yml para que use tu usr/pwd de MySQL
+
+### Para Tests
+
+Para correr los tests. 
+
+    mysql --user=tu_usuario_de_mysql -p --database=ci_test < data/monitor_ciudadano_dump.sql
+    rake 
+
+Para hacer los tests usamos directamente el dump de Monitor Ciudadano. 
 
 ## Contribuciones
  

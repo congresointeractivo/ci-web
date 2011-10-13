@@ -21,38 +21,62 @@
   <dt>Fuente del Proyecto: </dt><dd><%= @project.projectSource %></dd>
   
 </dl>
+<script type="text/javascript">
+			$(function(){
+				$('#tabs').tabs();
+				
+				var $tabs = $('#tabs').tabs(); // first tab selected
+				$('.goto-tabs-2').click(function() { // bind click event to link
+            $tabs.tabs('select', 2); // switch to third tab
+            return false;
+        });
+			});
+		</script>
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Texto completo</a></li>
+    <li><a href="#tabs-2">Detalles de votaciones</a></li>
+  </ul>
+  <div id="tabs-1">
+    aca va el texto
+    <a href="#tabs-2" class="goto-tabs-2">Ver detalles de las votaciones</a>
+  </div>
+  <div id="tabs-2">
+    <div id="votos">
+    <%if @project.votes.count == 0 %>
+      <h3>Todavía no se votó, o la votación no está disponible en el sitio</h3>
+    <% else %>
 
-<h2>Votación</h2>
-<ul id="detalle-votos" class="clearfix">
-    <li><%= @afirmative_vote_count %> 
-    <span class="tipo-de-dato">Votos Positivos</span></li>
-    
-    <li><%= @negative_vote_count %> 
-    <span class="tipo-de-dato">Votos negativos</span></li>
-    
-    <li> <%= @absent_vote_count %> 
-    <span class="tipo-de-dato">Ausentes</span></li>
-    
-    <li class="ultimo"><%= @abstention_vote_count %> 
-    <span class="tipo-de-dato">Abstenidos</span></li>
-</ul>
-<div id="votos">
-<%if @project.votes.count == 0 %>
-  <h3>Todavía no se votó, o la votación no está disponible en el sitio</h3>
-<% else %>
- <table class="tabla-funcionarios">
-    <thead>
-          <th>Cómo Votó</th>
-          <th>Nombre</th>
-          <th>Bloque</th>
-    </thead> 
-    <% @project.votes.each do |vote| %>
-    <tr class="<%= display_vote_type(vote.voteType).downcase %>">
-        <td><%= display_vote_type(vote.voteType) %></td>
-        <td><%= link_to "#{vote.legislador.full_name}", vote.legislador %></td> 
-        <td><%=vote.partido ? vote.partido.name : "?" %> </td>
-    </tr>
-    <% end %>
-  </table>
-<% end%>
+    <h2>Votación</h2>
+    <ul id="detalle-votos" class="clearfix">
+        <li><%= @afirmative_vote_count %> 
+        <span class="tipo-de-dato">Votos Positivos</span></li>
+
+        <li><%= @negative_vote_count %> 
+        <span class="tipo-de-dato">Votos negativos</span></li>
+
+        <li> <%= @absent_vote_count %> 
+        <span class="tipo-de-dato">Ausentes</span></li>
+
+        <li class="ultimo"><%= @abstention_vote_count %> 
+        <span class="tipo-de-dato">Abstenidos</span></li>
+    </ul>
+
+     <table class="tabla-funcionarios">
+        <thead>
+              <th>Cómo Votó</th>
+              <th>Nombre</th>
+              <th>Bloque</th>
+        </thead> 
+        <% @project.votes.each do |vote| %>
+        <tr class="<%= display_vote_type(vote.voteType).downcase %>">
+            <td><%= display_vote_type(vote.voteType) %></td>
+            <td><%= link_to "#{vote.legislador.full_name}", vote.legislador %></td> 
+            <td><%=vote.partido ? vote.partido.name : "?" %> </td>
+        </tr>
+        <% end %>
+      </table>
+    <% end%>
+    </div>
+  </div>
 </div>

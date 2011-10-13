@@ -5,8 +5,10 @@
 <head>
   <title>Congreso Interactivo</title>
   <link rel="author" href="humans.txt" />
-  <%= stylesheet_link_tag :all %>  
-  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "jquery.colorbox-min.js", "modales.js", "chosen.jquery.min.js", 'css3-mediaqueries.js','jquery.dataTables.min.js', "application.js", "columnizer.js" %>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag "../javascripts/jquery-ui-1.8.16.custom/css/ci-theme/jquery-ui-1.8.16.custom.css" %>
+  <%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "jquery.colorbox-min.js", "modales.js", "chosen.jquery.min.js", 'css3-mediaqueries.js','jquery.dataTables.min.js', "application.js", "columnizer.js", "jquery-ui-1.8.16.custom/js/jquery-ui-1.8.16.custom.min.js" %>
   <%= csrf_meta_tag %>
 </head>
 <%if request.path == '/' %>
@@ -41,9 +43,10 @@
                    </li>
                 </ul>
             </div>
-            <form method="get" action="http://www.google.com/search">
-              <input type="text" name="q" maxlength="255" />
-              <input type="submit" value="Google Search" />
+            
+            <form method="get" action="http://www.google.com/search" id="buscar" >
+              <input type="text" name="q" maxlength="255" value="Proyectos de ley, senadores, diputados" class="input-text" />
+              <input type="submit" value="Buscar" class="input-button" />
               <input type="hidden" name="domains" value="*.congresointeractivo.org" />
               <input style="visibility:hidden" type="radio" name="sitesearch" value="*.congresointeractivo.org" checked="checked" />
             </form>
@@ -61,7 +64,7 @@
             <ul class="clearfix">
                 <li><a href="/quienes-somos">Quienes somos</a></li>
                 <li><a href="#">Metodolog&iacute;a</a></li>
-                <li><a href="https://github.com/etagwerker/ci-web/">GitHub (para desarrolladores)</a></li>
+                <li><a href="https://github.com/congresointeractivo/ci-web/">GitHub (para desarrolladores)</a></li>
                 <li><a id="form-sumate" href="https://docs.google.com/spreadsheet/embeddedform?formkey=dFRmSjdsTkxoallYYmdDNjUtVlllZ3c6MQ">Sumate</a></li>
             </ul>
         </div>

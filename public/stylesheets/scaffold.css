@@ -178,6 +178,36 @@ html,body {
 #nav li.diputados { width:21%; }
 #nav li.bloques { width:17%; }
 
+#buscar {
+  float:left;
+  width:300px;
+  margin:6px 0 0 30px;
+}
+
+#buscar .input-text {
+  width:230px;
+  color:#b9b8b8;
+  border-radius:3px 0px 0px 3px;
+  border:1px solid #d9d7d7;
+  padding:2px 0 0px 5px;
+  height:28px;
+  
+}
+#buscar .input-button {
+  padding:7px;
+  height:32px;
+  background-color:#89aece;
+  text-transform:uppercase;
+  color:#fff;
+  border:1px solid #89aece;
+  text-shadow:0 -1px 0 #5f7e99;
+  border-radius:0px 3px 3px 0px;
+  margin-left:-5px;
+  
+  
+}
+
+
 
 /* Generales */
 
@@ -425,6 +455,23 @@ td{
   -moz-border-radius:5px;
   margin-bottom:25px;
 }
+th.sorting,
+th.sorting_desc,
+th.sorting_asc{
+  cursor:pointer;
+}
+th.sorting,
+th.sorting_desc,
+th.sorting_asc{
+  background: url(../images/sort-table-arrows.png) no-repeat right -27px;
+  padding-right: 12px;
+}
+th.sorting_asc{
+  background-position: right 10px;
+}
+th.sorting_desc{
+  background-position: right -63px;
+}
 
 th.bloque{width:21%};
 th.presentismo{width:14%};
@@ -649,4 +696,14 @@ html body.ss-base-body .ss-form-container .ss-form-heading .ss-required-asterisk
     list-style:none;
     display:inline;
     margin-right:12px;
+}
+
+/* Proyecto: Tabs */
+#tabs{
+  border: none;
+  padding: 0;
+}
+#tabs .ui-tabs-nav{
+  border-width:0 0 1px 0;
+  padding-left:5px;
 }
