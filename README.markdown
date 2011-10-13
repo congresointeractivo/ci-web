@@ -21,20 +21,37 @@ Utiliza el dump de monitor ciudadano: ~/data/monitor_ciudadano_dump.sql
     mysql --database=ci_development < data/monitor_ciudadano_dump.sql
     rake db:migrate
     rails server
-    
+
 Nota: Vas a tener que revisar config/database.yml para que use tu usr/pwd de MySQL
 
 ### Para Tests
 
-Para correr los tests. 
+Para correr los tests.
 
     mysql --user=tu_usuario_de_mysql -p --database=ci_test < data/monitor_ciudadano_dump.sql
-    rake 
+    rake
 
-Para hacer los tests usamos directamente el dump de Monitor Ciudadano. 
+Para hacer los tests usamos directamente el dump de Monitor Ciudadano.
+
+### Para producción
+
+Para configurar la notificación por mail de excepciones se puede modificar el archivo de configuración
+config/environment/production.rb
+
+Para configurar el SMTP se debe crear el archivo conf/initializer/setup_mail.rb con lo siguiente:
+
+    ActionMailer::Base.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => "gmail.com",
+      :user_name            => "errors.congresointeractivo",
+      :password             => "xxxxxxx",
+      :authentication       => "plain",
+      :enable_starttls_auto => true
+    }
 
 ## Contribuciones
- 
+
 * Cualquier contribución es bienvenida
 * Fork the project
 * Make your feature addition or bug fix
@@ -69,3 +86,4 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
