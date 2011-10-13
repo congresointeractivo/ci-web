@@ -134,7 +134,6 @@ PLATFORMS
 DEPENDENCIES
   capistrano (= 2.5.19)
   capybara
-  cucumber-rails
   exception_notification
   launchy
   mysql2 (< 0.3)
@@ -142,4 +141,3 @@ DEPENDENCIES
   ruby-debug19
   unicorn (= 3.2.1)
   will_paginate (~> 3.0.pre4)
-

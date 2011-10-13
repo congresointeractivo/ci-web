@@ -52,5 +52,7 @@ CiWeb::Application.configure do
     :sender_address => %{"notifier" <errors.congresointeractivo@gmail.com>},
     :exception_recipients => %w{ci-errors@googlegroups.com maxidr@gmail.com}
 
+  config.action_mailer.delivery_method = :smtp
+
 end
 
