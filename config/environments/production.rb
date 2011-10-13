@@ -46,4 +46,11 @@ CiWeb::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  config.middleware.use ExceptionNotifier,
+    :email_prefix => "[CI] Exception: ",
+    :sender_address => %{"notifier" <errors.congresointeractivo@gmail.com>},
+    :exception_recipients => %w{ci-errors@googlegroups.com maxidr@gmail.com}
+
 end
+

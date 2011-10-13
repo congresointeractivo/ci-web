@@ -30,19 +30,21 @@ gem 'will_paginate', "~> 3.0.pre4"
 # end
 
 
-group :development do 
+group :development do
   gem 'ruby-debug19'
-  
+
   # Deploy with Capistrano
   gem 'capistrano', '2.5.19'
-  
+
   # Test with Cucumber
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'launchy'
-  
+
 end
 
-group :production do  
+group :production do
   gem 'unicorn', '3.2.1'
+  gem 'exception_notification'
 end
+
