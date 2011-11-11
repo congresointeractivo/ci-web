@@ -1,38 +1,35 @@
 <h3>Por Bloque</h3>
 
-<% bloques.each.with_index do |bloque, index| %>
+<ul class="bloques">
+<% if request.path == '/diputados' or request.path == '/senadores' %>
+  <li class="elegido">Todos</li>
+<% else %>
+  <li><a href="./">Todos</a></li>
+<% end %>
 
-  <%if index == 0 %>
-    <ul class="bloques">
-    <% if request.path == '/diputados' or request.path == '/senadores' %>
-        <li class="elegido">Todos</li>
-    <% else %>
-        <li><a href="./">Todos</a></li>
-    <% end %>
-  <% end %>
-  <%if index >= 0  %>
-    <% if index == 5 %>
-      <li class="mas"><a href="#">Más bloques &raquo;</a>
-        <div class="mas-facetas">
-          <div class="inner clearfix">
-          <h4>Más bloques</h4>
-        <ul>
-      <% if defined?(@filter) && @filter[:bloques] && @filter[:bloques].include?(bloque.to_s) %>
-        <li class="elegido"><%= bloque %>&nbsp;<i>(<%= bloque.miembros.count %>)</i></li>
-      <% else %>
-        <li><a href="<%= filter_action_path %>?bloques=<%= bloque %>"><%= bloque %></a>&nbsp;<i>(<%= bloque.miembros.count %>)</i></li>
-      <% end %>
-      </li>
-    <% else  %>
-      <% if defined?(@filter) && @filter[:bloques] && @filter[:bloques].include?(bloque.to_s) %>
+<% bloques.each.with_index do |bloque, index| %>
+  <% if index == 5 %>
+    <li class="mas"><a href="#">Más bloques &raquo;</a>
+      <div class="mas-facetas">
+        <div class="inner clearfix">
+        <h4>Más bloques</h4>
+      <ul>
+    <% if defined?(@filter) && @filter[:bloques] && @filter[:bloques].include?(bloque.to_s) %>
       <li class="elegido"><%= bloque %>&nbsp;<i>(<%= bloque.miembros.count %>)</i></li>
-      <% else %>
+    <% else %>
       <li><a href="<%= filter_action_path %>?bloques=<%= bloque %>"><%= bloque %></a>&nbsp;<i>(<%= bloque.miembros.count %>)</i></li>
-      <% end %>
-    <% end   %>
-  <% end  %>
-  <%if bloques.last == bloque %>
-    </div></div></ul></li>
-  </ul> 
-    <% end  %>
+    <% end %>
+    </li>
+  <% else  %>
+    <% if defined?(@filter) && @filter[:bloques] && @filter[:bloques].include?(bloque.to_s) %>
+    <li class="elegido"><%= bloque %>&nbsp;<i>(<%= bloque.miembros.count %>)</i></li>
+    <% else %>
+    <li><a href="<%= filter_action_path %>?bloques=<%= bloque %>"><%= bloque %></a>&nbsp;<i>(<%= bloque.miembros.count %>)</i></li>
+    <% end %>
+  <% end   %>
 <% end  %>
+        </div>
+      </div>
+    </ul>
+  </li>
+</ul>

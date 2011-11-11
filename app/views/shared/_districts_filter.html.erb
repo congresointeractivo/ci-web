@@ -1,18 +1,16 @@
-<h3>Por Distrito</h3>
+<h3>Por Provincia</h3>
 
-<% distritos.each.with_index do |distrito, index| %>
-
-  <%if index == 0 %>
-    <ul class="distritos">
-    <% if request.path == '/diputados' or request.path == '/senadores' %>
-        <li class="elegido">Todos</li>
-    <% else %>
-        <li><a href="./">Todos</a></li>
-    <% end %>
+<ul class="distritos">
+  <% if request.path == '/diputados' or request.path == '/senadores' %>
+    <li class="elegido">Todos</li>
+  <% else %>
+    <li><a href="./">Todos</a></li>
   <% end %>
-  <%if index >= 0  %>
+
+  <% distritos.each.with_index do |distrito, index| %>
+
     <% if index == 8 %>
-      <li class="mas"><a href="#">Más distritos &raquo;</a>
+      <li class="mas"><a href="#">Más provincias &raquo;</a>
         <div class="mas-facetas">
           <div class="inner clearfix">
           <h4>Más bloques</h4>
@@ -30,9 +28,8 @@
       <li class="noelegidos"><a href="./filtrar_por?distritos=<%= distrito %>"><%= distrito %></a></li>
       <% end %>
     <% end   %>
+
   <% end  %>
-  <%if distritos.last == distrito %>
-    </div></div></ul></li>
-  </ul> 
-    <% end  %>
-<% end  %>
+
+  </div></div></ul></li>
+</ul>
