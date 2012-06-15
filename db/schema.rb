@@ -19,21 +19,21 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "type",        :null => false
   end
 
-  add_index "Commission", ["name", "type"], :name => "name", :unique => true
+  add_index "commission", ["name", "type"], :name => "name", :unique => true
 
   create_table "CommissionMembership", :force => true do |t|
     t.string  "role",                       :null => false
     t.integer "commission_id", :limit => 8, :null => false
   end
 
-  add_index "CommissionMembership", ["commission_id"], :name => "FK7AAB2B41B5E79273"
+  add_index "commissionmembership", ["commission_id"], :name => "FK7AAB2B41B5E79273"
 
   create_table "Diputado", :force => true do |t|
     t.string "hcdnId", :null => false
   end
 
-  add_index "Diputado", ["hcdnId"], :name => "hcdnId", :unique => true
-  add_index "Diputado", ["id"], :name => "FK1003F02241ED9140"
+  add_index "diputado", ["hcdnId"], :name => "hcdnId", :unique => true
+  add_index "diputado", ["id"], :name => "FK1003F02241ED9140"
 
   create_table "Diputado_elements", :id => false, :force => true do |t|
     t.integer "Diputado_id", :limit => 8, :null => false
@@ -41,19 +41,19 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "value"
   end
 
-  add_index "Diputado_elements", ["Diputado_id"], :name => "FK941108748248E265"
+  add_index "diputado_elements", ["Diputado_id"], :name => "FK941108748248E265"
 
   create_table "Diputado_yearsWithDj", :id => false, :force => true do |t|
     t.integer "Diputado_id", :limit => 8, :null => false
     t.integer "element"
   end
 
-  add_index "Diputado_yearsWithDj", ["Diputado_id"], :name => "FK11157EC58248E265"
+  add_index "diputado_yearswithdj", ["Diputado_id"], :name => "FK11157EC58248E265"
 
   create_table "DiputadosProject", :force => true do |t|
   end
 
-  add_index "DiputadosProject", ["id"], :name => "FK311AB9489C8765D0"
+  add_index "diputadosproject", ["id"], :name => "FK311AB9489C8765D0"
 
   create_table "DiputadosRevision", :force => true do |t|
     t.string "law"
@@ -61,8 +61,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string "who"
   end
 
-  add_index "DiputadosRevision", ["id"], :name => "FK1E380F8C7D14D168"
-  add_index "DiputadosRevision", ["revisionFile"], :name => "revisionFile", :unique => true
+  add_index "diputadosrevision", ["id"], :name => "FK1E380F8C7D14D168"
+  add_index "diputadosrevision", ["revisionFile"], :name => "revisionFile", :unique => true
 
   create_table "District", :force => true do |t|
     t.string  "name",                           :null => false
@@ -78,12 +78,12 @@ ActiveRecord::Schema.define(:version => 0) do
     t.float   "countPresentPercentage"
   end
 
-  add_index "District", ["name"], :name => "name", :unique => true
+  add_index "district", ["name"], :name => "name", :unique => true
 
   create_table "ExecutiveProject", :force => true do |t|
   end
 
-  add_index "ExecutiveProject", ["id"], :name => "FK1672663150BAA0D1"
+  add_index "executiveproject", ["id"], :name => "FK1672663150BAA0D1"
 
   create_table "Legislador", :force => true do |t|
     t.binary  "active",                         :limit => 1, :null => false
@@ -103,20 +103,20 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer "negative",                                    :null => false
   end
 
-  add_index "Legislador", ["id"], :name => "FK4D31931A389CA30A"
+  add_index "legislador", ["id"], :name => "FK4D31931A389CA30A"
 
   create_table "LegisladorProject", :force => true do |t|
   end
 
-  add_index "LegisladorProject", ["id"], :name => "FKD41A7E9F50BAA0D1"
+  add_index "legisladorproject", ["id"], :name => "FKD41A7E9F50BAA0D1"
 
   create_table "LegisladorProject_Legislador", :id => false, :force => true do |t|
     t.integer "LegisladorProject_id", :limit => 8, :null => false
     t.integer "signatories_id",       :limit => 8, :null => false
   end
 
-  add_index "LegisladorProject_Legislador", ["LegisladorProject_id"], :name => "FK3C7060BAD126C330"
-  add_index "LegisladorProject_Legislador", ["signatories_id"], :name => "FK3C7060BAAFFBF1FB"
+  add_index "legisladorproject_legislador", ["LegisladorProject_id"], :name => "FK3C7060BAD126C330"
+  add_index "legisladorproject_legislador", ["signatories_id"], :name => "FK3C7060BAAFFBF1FB"
 
   create_table "Mandato", :force => true do |t|
     t.string   "endCause"
@@ -127,30 +127,30 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "politicalParty_id", :limit => 8, :null => false
   end
 
-  add_index "Mandato", ["district_id"], :name => "FK9502EFF269F1EA59"
-  add_index "Mandato", ["legislador_id"], :name => "FK9502EFF22E5D24A5"
-  add_index "Mandato", ["politicalParty_id"], :name => "FK9502EFF2CC49AB99"
+  add_index "mandato", ["district_id"], :name => "FK9502EFF269F1EA59"
+  add_index "mandato", ["legislador_id"], :name => "FK9502EFF22E5D24A5"
+  add_index "mandato", ["politicalParty_id"], :name => "FK9502EFF2CC49AB99"
 
   create_table "Mandato_CommissionMembership", :id => false, :force => true do |t|
     t.integer "Mandato_id",     :limit => 8, :null => false
     t.integer "commissions_id", :limit => 8, :null => false
   end
 
-  add_index "Mandato_CommissionMembership", ["Mandato_id"], :name => "FK2B51216ED394470"
-  add_index "Mandato_CommissionMembership", ["commissions_id"], :name => "FK2B51216E9F83454C"
+  add_index "mandato_commissionmembership", ["Mandato_id"], :name => "FK2B51216ED394470"
+  add_index "mandato_commissionmembership", ["commissions_id"], :name => "FK2B51216E9F83454C"
 
   create_table "Mandato_Period", :id => false, :force => true do |t|
     t.integer "Mandato_id", :limit => 8, :null => false
     t.integer "periods_id", :limit => 8, :null => false
   end
 
-  add_index "Mandato_Period", ["Mandato_id"], :name => "FKC036FACED394470"
-  add_index "Mandato_Period", ["periods_id"], :name => "FKC036FACE660513B3"
+  add_index "mandato_period", ["Mandato_id"], :name => "FKC036FACED394470"
+  add_index "mandato_period", ["periods_id"], :name => "FKC036FACE660513B3"
 
   create_table "MinisterProject", :force => true do |t|
   end
 
-  add_index "MinisterProject", ["id"], :name => "FKF5327F9450BAA0D1"
+  add_index "ministerproject", ["id"], :name => "FKF5327F9450BAA0D1"
 
   create_table "Minute", :force => true do |t|
     t.datetime "minute_date",              :null => false
@@ -158,12 +158,12 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "reunion_id",  :limit => 8
   end
 
-  add_index "Minute", ["reunion_id"], :name => "FK896092348E242F30"
+  add_index "minute", ["reunion_id"], :name => "FK896092348E242F30"
 
   create_table "ParticularProject", :force => true do |t|
   end
 
-  add_index "ParticularProject", ["id"], :name => "FKB37E166450BAA0D1"
+  add_index "particularproject", ["id"], :name => "FKB37E166450BAA0D1"
 
   create_table "Period", :force => true do |t|
     t.datetime "extending_from"
@@ -175,7 +175,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "periodId",           :limit => 8, :null => false
   end
 
-  add_index "Period", ["periodId"], :name => "periodId", :unique => true
+  add_index "period", ["periodId"], :name => "periodId", :unique => true
 
   create_table "Period_mandatos", :id => false, :force => true do |t|
     t.integer "Period_id",                      :limit => 8, :null => false
@@ -190,8 +190,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer "mapkey_id",                      :limit => 8, :null => false
   end
 
-  add_index "Period_mandatos", ["Period_id"], :name => "FK9807073F70D44664"
-  add_index "Period_mandatos", ["mapkey_id"], :name => "FK9807073F41C66F5F"
+  add_index "period_mandatos", ["Period_id"], :name => "FK9807073F70D44664"
+  add_index "period_mandatos", ["mapkey_id"], :name => "FK9807073F41C66F5F"
 
   create_table "PoliticalParty", :force => true do |t|
     t.string  "mail"
@@ -210,8 +210,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer "president_id",                   :limit => 8
   end
 
-  add_index "PoliticalParty", ["name", "type"], :name => "name", :unique => true
-  add_index "PoliticalParty", ["president_id"], :name => "FKC6680E09E11D401F"
+  add_index "politicalparty", ["name", "type"], :name => "name", :unique => true
+  add_index "politicalparty", ["president_id"], :name => "FKC6680E09E11D401F"
 
   create_table "Politician", :force => true do |t|
     t.binary  "blog"
@@ -242,24 +242,24 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "minute_id",     :limit => 8
   end
 
-  add_index "Project", ["file"], :name => "file", :unique => true
-  add_index "Project", ["minute_id"], :name => "FK50C8E2F9ECC5A004"
+  add_index "project", ["file"], :name => "file", :unique => true
+  add_index "project", ["minute_id"], :name => "FK50C8E2F9ECC5A004"
 
   create_table "ProjectStatistics", :force => true do |t|
     t.integer  "amount", :null => false
     t.datetime "date",   :null => false
   end
 
-  add_index "ProjectStatistics", ["date"], :name => "date", :unique => true
+  add_index "projectstatistics", ["date"], :name => "date", :unique => true
 
   create_table "Project_Vote", :id => false, :force => true do |t|
     t.integer "Project_id", :limit => 8, :null => false
     t.integer "voters_id",  :limit => 8, :null => false
   end
 
-  add_index "Project_Vote", ["Project_id"], :name => "FK41BE90907A9684E"
-  add_index "Project_Vote", ["voters_id"], :name => "FK41BE9090A9718F53"
-  add_index "Project_Vote", ["voters_id"], :name => "voters_id", :unique => true
+  add_index "project_vote", ["Project_id"], :name => "FK41BE90907A9684E"
+  add_index "project_vote", ["voters_id"], :name => "FK41BE9090A9718F53"
+  add_index "project_vote", ["voters_id"], :name => "voters_id", :unique => true
 
   create_table "Project_elements", :id => false, :force => true do |t|
     t.integer "Project_id", :limit => 8, :null => false
@@ -267,24 +267,24 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "value"
   end
 
-  add_index "Project_elements", ["Project_id"], :name => "FK866A577D7A9684E"
+  add_index "project_elements", ["Project_id"], :name => "FK866A577D7A9684E"
 
   create_table "Reunion", :force => true do |t|
     t.integer "number"
     t.integer "session_id", :limit => 8, :null => false
   end
 
-  add_index "Reunion", ["session_id"], :name => "FKA4BCC85C2EEC23F0"
+  add_index "reunion", ["session_id"], :name => "FKA4BCC85C2EEC23F0"
 
   create_table "Senador", :force => true do |t|
   end
 
-  add_index "Senador", ["id"], :name => "FKD93A638241ED9140"
+  add_index "senador", ["id"], :name => "FKD93A638241ED9140"
 
   create_table "SenadoresProject", :force => true do |t|
   end
 
-  add_index "SenadoresProject", ["id"], :name => "FKD60045499C8765D0"
+  add_index "senadoresproject", ["id"], :name => "FKD60045499C8765D0"
 
   create_table "Session", :force => true do |t|
     t.integer "number"
@@ -292,39 +292,39 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer "period_id", :limit => 8, :null => false
   end
 
-  add_index "Session", ["period_id"], :name => "FKD9891A7670D44664"
+  add_index "session", ["period_id"], :name => "FKD9891A7670D44664"
 
   create_table "SignableProject", :force => true do |t|
     t.string "type"
   end
 
-  add_index "SignableProject", ["id"], :name => "FKD36B46627D14D168"
+  add_index "signableproject", ["id"], :name => "FKD36B46627D14D168"
 
   create_table "SignableProject_Commission", :id => false, :force => true do |t|
     t.integer "SignableProject_id", :limit => 8, :null => false
     t.integer "commissions_id",     :limit => 8, :null => false
   end
 
-  add_index "SignableProject_Commission", ["SignableProject_id"], :name => "FKE54FF7087CD9F38E"
-  add_index "SignableProject_Commission", ["commissions_id"], :name => "FKE54FF70820271156"
+  add_index "signableproject_commission", ["SignableProject_id"], :name => "FKE54FF7087CD9F38E"
+  add_index "signableproject_commission", ["commissions_id"], :name => "FKE54FF70820271156"
 
   create_table "SignableProject_unknown", :id => false, :force => true do |t|
     t.integer "SignableProject_id", :limit => 8, :null => false
     t.string  "element"
   end
 
-  add_index "SignableProject_unknown", ["SignableProject_id"], :name => "FK2C8D176D7CD9F38E"
+  add_index "signableproject_unknown", ["SignableProject_id"], :name => "FK2C8D176D7CD9F38E"
 
   create_table "VariousOfficersProject", :force => true do |t|
   end
 
-  add_index "VariousOfficersProject", ["id"], :name => "FKC539391150BAA0D1"
+  add_index "variousofficersproject", ["id"], :name => "FKC539391150BAA0D1"
 
   create_table "Vote", :force => true do |t|
     t.string  "voteType",                   :null => false
     t.integer "legislador_id", :limit => 8, :null => false
   end
 
-  add_index "Vote", ["legislador_id"], :name => "FK28C70A2E5D24A5"
+  add_index "vote", ["legislador_id"], :name => "FK28C70A2E5D24A5"
 
 end
