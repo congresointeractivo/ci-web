@@ -6,6 +6,7 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2', '< 0.3'
+gem 'pg'
 gem 'will_paginate', "~> 3.0.pre4"
 
 # Use unicorn as the web server
@@ -35,6 +36,7 @@ group :development do
 
   # Deploy with Capistrano
   gem 'capistrano', '2.5.19'
+  gem 'heroku'
 
   # Test with Cucumber
   gem 'capybara'
