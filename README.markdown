@@ -50,6 +50,18 @@ Para configurar el SMTP se debe crear el archivo conf/initializer/setup_mail.rb 
       :enable_starttls_auto => true
     }
 
+ENV['SMTP_USER_NAME']
+ENV['SMTP_PASSWORD']
+
+heroku config:add SMTP_USER_NAME= SMTP_PASSWORD=
+
+#### Despliegue en Heroku
+
+Para realizar el despliegue en heroku se utilizó el add-on [ClearDB](https://addons.heroku.com/cleardb) que permite utilizar mysql (en vez del postgres por defecto de heroku).  La versión gratuita está limitada a 5MB de storage.
+
+El script (dump sql) puede ser convertido a postgres (utilizando la gema [mysql2postgres](https://github.com/maxlapshin/mysql2postgres)). 
+Existe un conveniente con el nombre de las tablas lo que impide, sin un realizar varios cambios en el proyecto, utilizar la aplicación con Postgres.  El inconveniente reside en que las tablas (en el script) son creadas en mayúsculas y postgres falla al realizar las consultas, ya que normaliza todos los identificadores (nombres de tablas, columnas, etc) a minúsculas (http://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS)  
+
 ## Contribuciones
 
 * Cualquier contribución es bienvenida
