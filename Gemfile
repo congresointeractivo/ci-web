@@ -46,8 +46,8 @@ group :development do
 end
 
 group :production do
-  gem 'unicorn', '3.2.1'
   gem 'exception_notification'
   gem 'mysql2'
+  gem 'thin'
 end
 
