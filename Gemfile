@@ -5,8 +5,9 @@ gem 'rails', '3.0.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', '< 0.3'
+#gem 'mysql2', '< 0.3'
 gem 'pg'
+gem 'mysql2'
 gem 'will_paginate', "~> 3.0.pre4"
 
 # Use unicorn as the web server
@@ -47,5 +48,6 @@ end
 group :production do
   gem 'unicorn', '3.2.1'
   gem 'exception_notification'
+  gem 'mysql2'
 end
 

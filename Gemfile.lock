@@ -150,7 +150,7 @@ DEPENDENCIES
   exception_notification
   heroku
   launchy
-  mysql2 (< 0.3)
+  mysql2
   pg
   rails (= 3.0.9)
   ruby-debug19
