@@ -44,20 +44,35 @@ Para configurar el SMTP se debe crear el archivo conf/initializer/setup_mail.rb 
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :domain               => "gmail.com",
-      :user_name            => "errors.congresointeractivo",
-      :password             => "xxxxxxx",
+      :user_name            => ENV['SMTP_USER_NAME'],
+      :password             => ENV['SMTP_PASSWORD'],
       :authentication       => "plain",
       :enable_starttls_auto => true
     }
 
-ENV['SMTP_USER_NAME']
-ENV['SMTP_PASSWORD']
+### Despliegue en Heroku (Producción)
 
-heroku config:add SMTP_USER_NAME= SMTP_PASSWORD=
+#### Configuración del SMTP (para el envío de mails)
 
-#### Despliegue en Heroku
+```
+heroku config:set SMTP_USER_NAME='errors.congresointeractivo' 
+heroku config:set SMTP_PASSWORD='password'
+```
 
-Para realizar el despliegue en heroku se utilizó el add-on [ClearDB](https://addons.heroku.com/cleardb) que permite utilizar mysql (en vez del postgres por defecto de heroku).  La versión gratuita está limitada a 5MB de storage.
+#### Base de datos externa
+
+Se configuró una base de datos mysql en el hosting Neolo.com
+Para poder utilizarla desde heroku se debe ejecutar en la terminal lo siguiente:
+
+``` 
+heroku config:set DATABASE_URL="mysql2://usuario:password@www.congresointeractivo.org/congreso_interactivo?reconnect=true"
+
+```
+
+donde se debe utilizar el usuario y password creado en el hosting.  
+Para que el servidor mysql permita el acceso desde heroku se debe dar permiso al host: %.amazonaws.com
+
+#### Conversión a PostgreSQL
 
 El script (dump sql) puede ser convertido a postgres (utilizando la gema [mysql2postgres](https://github.com/maxlapshin/mysql2postgres)). 
 Existe un conveniente con el nombre de las tablas lo que impide, sin un realizar varios cambios en el proyecto, utilizar la aplicación con Postgres.  El inconveniente reside en que las tablas (en el script) son creadas en mayúsculas y postgres falla al realizar las consultas, ya que normaliza todos los identificadores (nombres de tablas, columnas, etc) a minúsculas (http://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS)  
